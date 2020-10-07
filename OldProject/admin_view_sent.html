@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<!--
+    admin_view_sent.html
+
+    Group Project Part 3
+    Mobile Applications CSCI2356
+    Theresa Clarke A00429814
+    James Heading A00438459
+    Shannon Power A00271744
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Email System</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="group_project.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="viewSentItem(1)">
+    <!--Call for javascript file -->
+    <script src="group_project.js">
+    </script>
+    <!-- CALL FOR JQUERY -->
+    <script src="./scripts/jquery-3.4.1.min.js"></script>
+
+    <div data-role="page">
+        <div class="input-group-text title" data-role=header>
+            VIEWING SENT ITEM
+        </div>
+
+        <!-- Help Prompt -->
+        <div class="input-group-text helpMessage" data-role=header>
+            <span>Did you know that you can click on To, Cc, Subject or Body and help will appear?</span>
+        </div>
+
+        <div class="view" data-role="content">
+            <!-- To header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)">To</span></a>
+                <a data-role="button" class="btn composeField " onclick=" "><input data-role="button" class="form-control" type="text" id="adminSentTo"></a>
+            </div>
+            <!-- Cc header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader" onclick=" "><span onclick="openHelpWindow(this)">Cc</span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="adminSentCc"></a>
+            </div>
+            <!-- Subject header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader" onclick=" "><span onclick="openHelpWindow(this)">Subject</span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="adminSentSubject"></a>
+            </div>
+            <!-- Textbox for email body -->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader" onclick=" "><span onclick="openHelpWindow(this)">Body</span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><textarea rows="8" id="adminSentBody"></textarea></a>
+            </div>
+        </div>
+
+        <!--Body Footer -->
+        <div class="input-group-text" data-role=footer>
+        </div>
+
+        <!--Buttons-->
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- BACK BUTTON -->
+            <a data-role="button" class="btn mybtncolor" onclick="adminLinkToSentItems()">Back</a>
+            <!-- HELP BUTTON - opens help page -->
+            <a data-role="button" class="btn mybtncolor" onclick="helpButton()">Help</a>
+        </div>
+    </div>
+
+</body>
+</html>
