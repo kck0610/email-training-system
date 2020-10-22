@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    student_settings.html
+
+    Software Engingeering CSCI 3428
+    Shannon Power A00271744
+    James Heading A00438459
+	Theresa Clarke A00429814
+	Ben Wright A00374119
+	Hannah Serroul A00408086
+	Keenan King A00401667
+
+-->
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Student Email System</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="group_project.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="checkComposeFull(0)">
+    <!--Call for javascript file -->
+    <script src="group_project.js">
+    </script>
+    <!-- CALL FOR JQUERY -->
+    <script src="./scripts/jquery-3.4.1.min.js"></script>
+
+    <div data-role="page">
+        <div class="input-group-text title" data-role=header>
+            SETTINGS
+        </div>
+
+		<div class="view" data-role="content">
+		<!--TODO: We'll need a new function to save the state of these switches-->
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings1"><span class="slider"></span></label>&emsp;Example text for setting 1
+            </div>
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings2"><span class="slider"></span></label>&emsp;Example text for setting 2
+            </div>
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings3"><span class="slider"></span></label>&emsp;Example text for setting 3
+            </div>
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings4"><span class="slider"></span></label>&emsp;Example text for setting 4
+            </div>
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings5"><span class="slider"></span></label>&emsp;Example text for setting 5
+            </div>
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label class="switch"><input type="checkbox" id="settings6"><span class="slider"></span></label>&emsp;Example text for setting 6
+            </div>
+			
+			<div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <label for="theme">Theme:&emsp;</label>
+				<select name="theme" id="theme">
+					<option value="colourful">Colourful</option>
+					<option value="darkgrey">Dark Grey</option>
+					<option value="black">Black</option>
+					<option value="white">White</option>
+				</select>
+			</div>
+			
+			
+		</div>
+		
+        <!--Body  Footer -->
+        <div class="input-group-text" data-role=footer>
+        </div>
+
+        <!--Buttons-->
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- BACK BUTTON - goes back to previous page -->
+            <a data-role="button" class="btn mybtncolor" onclick="confirmChoice(goBack,'Go back to the previous page?')">Back</a>
+            <!-- HELP BUTTON - opens help page -->
+            <a data-role="button" class="btn mybtncolor" onclick="helpButton()">Help</a> <!--TODO: Need to edit helpButton() to include this page-->
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,838 @@
+(node:30583) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+(node:30698) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+(node:31557) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: 
+   { to: 'theresa',
+     cc: 'hh',
+     subject: 'test',
+     emailtext: 'this is to see if I got the popup working' } }
+1 document(s) updated
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: 'hh',
+     subject: 'test',
+     emailtext: 'this is to see if I got the popup working',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+setArrayCollectionItem: 
+{ adminSentEmails: 
+   { to: 'theresa',
+     from: 'ygujhbnm',
+     cc: 'jhbhjb',
+     subject: 'yugu',
+     emailtext: 'another test' } }
+1 document(s) updated
+setArrayCollectionItem: 
+{ studentInboxEmails: 
+   { from: 'ygujhbnm',
+     cc: 'jhbhjb',
+     subject: 'yugu',
+     emailtext: 'another test',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.2.wasSeen
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.2.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: { to: 'example', cc: 'aa', subject: 'jjsjs', emailtext: 'Hello' } }
+1 document(s) updated
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: 'aa',
+     subject: 'jjsjs',
+     emailtext: 'Hello',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.wasSeen
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.checked
+1 document(s) updated
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.checked
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.2.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+(node:20060) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+(node:20402) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.0.wasSeen
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: 
+   { to: 'Charli (Charli@autismns.ca)',
+     cc: '',
+     subject: 'Hello',
+     emailtext: 'Just testing' } }
+1 document(s) updated
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: '',
+     subject: 'Hello',
+     emailtext: 'Just testing',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.0.wasSeen
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+setArrayCollectionItem: 
+{ adminSentEmails: 
+   { to: 'Charli (Charli@autismns.ca)',
+     from: 'Terry (Terry@humanisticsystems.ca)',
+     cc: '',
+     subject: 'Howdy',
+     emailtext: 'Please get back to me asap' } }
+setArrayCollectionItem: 
+{ studentInboxEmails: 
+   { from: 'Terry (Terry@humanisticsystems.ca)',
+     cc: '',
+     subject: 'Howdy',
+     emailtext: 'Please get back to me asap',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: { to: 'a', cc: 'b', subject: 'c', emailtext: 'd' } }
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: 'b',
+     subject: 'c',
+     emailtext: 'd',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: undefined
+1 document(s) updated
+getCollectionItem: undefined
+getCollectionItem: undefined
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: { to: '', cc: '', subject: '', emailtext: '' } }
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: '',
+     subject: '',
+     emailtext: '',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+1 document(s) updated
+getCollectionItem: studentSentEmails
+1 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+setArrayCollectionItem: 
+{ adminSentEmails: { to: '', from: '', cc: '', subject: '', emailtext: '' } }
+setArrayCollectionItem: 
+{ studentInboxEmails: 
+   { from: '',
+     cc: '',
+     subject: '',
+     emailtext: '',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+1 document(s) updated
+getCollectionItem: adminSentEmails
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+1 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.1.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+SetItemProperty: adminInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+module.js:549
+    throw err;
+    ^
+
+Error: Cannot find module '/home/groups_2020/group3/public_html/Build_v1/Build_v1.js'
+    at Function.Module._resolveFilename (module.js:547:15)
+    at Function.Module._load (module.js:474:25)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:188:16)
+    at bootstrap_node.js:609:3
+(node:3886) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+(node:5174) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Listening on port 3022
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+setArrayCollectionItem: 
+{ studentSentEmails: { to: '', cc: '', subject: '', emailtext: '' } }
+1 document(s) updated
+setArrayCollectionItem: 
+{ adminInboxEmails: 
+   { from: 'student@autismns.ca',
+     cc: '',
+     subject: '',
+     emailtext: '',
+     wasSeen: 'false',
+     checked: 'false' } }
+1 document(s) updated
+getCollectionItem: adminSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminSentEmails
+getCollectionItem: adminInboxEmails
+1 document(s) updated
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+1 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
+getCollectionItem: studentInboxEmails
+getCollectionItem: studentInboxEmails
+SetItemProperty: studentInboxEmails.0.wasSeen
+0 document(s) updated
+getCollectionItem: studentSentEmails
+getCollectionItem: adminInboxEmails
