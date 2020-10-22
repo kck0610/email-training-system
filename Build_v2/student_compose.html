@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<!--
+    student_compose.html
+
+    Group Project Part 3
+    Mobile Applications CSCI2356
+    Theresa Clarke A00429814
+    James Heading A00438459
+    Shannon Power A00271744
+-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Your Email System</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="group_project.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="checkComposeFull(1); displayStudentHelpPopups(); $('input:checkbox').prop('checked', false)">
+    <!--Call for javascript file -->
+    <script src="group_project.js">
+    </script>
+    <!-- CALL FOR JQUERY -->
+    <script src="./scripts/jquery-3.4.1.min.js"></script>
+
+    <div data-role="page">
+        <div class="input-group-text title" data-role=header>
+            COMPOSING
+        </div>
+
+        <!-- Help Prompt -->
+        <div class="input-group-text helpMessage" data-role=header>
+            <span>Did you know that you can click on To, Cc, Subject or Body and help will appear?</span>
+        </div>
+
+<div class="view" data-role="content">
+            <!-- To header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">To<span class="helphovertext" id="popupto">
+			<p>Who do you need to send an email to?</p>
+			<p>How may people do you need to send this email to?</p>
+		</span></div></span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="to" list="emails"></a>
+            </div>
+            <!-- Cc header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Cc<span class="helphovertext" id="popupcc">
+			<p>Is there anyone you need to copy on this email?</p>
+		</span></div></span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="cc" list="emails"></a>
+            </div>
+            <!-- Subject header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Subject<span class="helphovertext" id="popupsubject">
+			<p>What is this email about?</p>
+			<p>Why are you sending this email?</p>
+			<p>Remember to keep this short and concise</p>
+		</span></div></span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="sb"></a>
+            </div>
+            <!-- Textbox for email body -->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Body<span class="helphovertext" id="popupbody">
+			<p>How should you greet the person you are emailing?</p>
+			<p>Do you need to ask any questions?</p>
+			<p>Does the person you are emailing need to know any information about you?</p>		
+		</span></div></span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><textarea rows="8" id="emailtext"></textarea></a>
+            </div>
+        </div>
+        <!--The datalist containing the emails that the student can select in the To & Cc dropdown menus-->
+        <datalist id="emails">
+            <option value="Terence Goldsmith (Terence.Goldsmith@smu.ca)">
+            <option value="Terry (Terry@humanisticsystems.ca)">
+            <option value="Charli (Charli@autismns.ca)">
+            <option value="Chrystal (Chrystal@autismns.ca)">
+        </datalist>
+		
+		<!--The popup asking the user if they've checked aspects of their email-->
+		<div id="overlay">
+			<div id="popup">
+				<p><input type='checkbox' id='sendConfirmCheckbox1'> 1) Is everything spelled correctly?</p>
+		                <p><input type='checkbox' id='sendConfirmCheckbox2'> 2) Did you use full sentences?</p>
+				<p><input type='checkbox' id='sendConfirmCheckbox3'> 3) Is the email addressed to the correct person?</p>
+				<p><input type='checkbox' id='sendConfirmCheckbox4'> 4) Did you sign your name at the end of the email?</p>
+				<a data-role="button" class="btn mybtncolor" onclick="sendConfirmation(this)">Continue</a>
+				<a data-role="button" class="btn mybtncolor" onclick="sendConfirmation(this)">Back</a>
+			</div>
+		</div>
+
+        <!--Body  Footer -->
+        <div class="input-group-text" data-role=footer>
+        </div>
+
+        <!--Buttons-->
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- SEND BUTTON - goes back to previous page on send-->
+            <a data-role="button" class="btn mybtncolor" onclick="composeConfirmBack(this, 's')">Send</a><!--**JH -->
+            <!-- CANCEL BUTTON - goes back to previous page on cancel -->
+            <a data-role="button" class="btn mybtncolor" onclick="composeConfirmBack(this, 's')">Cancel</a><!--**JH -->
+            <!-- HELP BUTTON - opens help page -->
+            <a data-role="button" class="btn mybtncolor" onclick="helpButton()">Help</a>
+        </div>
+    </div>
+
+</body>
+</html>
