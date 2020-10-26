@@ -839,16 +839,16 @@ function changeStudentHelpPopups() {
 }
 
 /* Collects help popup text from database and inserts into help popups
-   on load of the student's Compose page */
+   on load of the student's Compose page 
+   Theresa C */
 function displayStudentHelpPopups() {
 	var popupData = { key: "popupData" };
 	    $.post(SERVER_URL + '/doGet', popupData, function (data) {
-        console.log(data); // This proves the data saved to the database and is being collected back from it, so that's not the problem
-		// TODO: Find out why this doesn't work and fix it
-        $("#popupto").val(data.to);
-        $("#popupcc").val(data.cc);
-        $("#popupsubject").val(data.subject);
-        $("#popupbody").val(data.body);
+	document.getElementById("popupto").innerText = data.to;
+        document.getElementById("popupcc").innerText = data.cc;
+	// document.getElementById("popupbcc").innerText = data.bcc; // To be added after Bcc section is implemented in student_compose
+        document.getElementById("popupsubject").innerText = data.subject;
+        document.getElementById("popupbody").innerText = data.body;
     }).fail(errorCallback);
 	
 }
