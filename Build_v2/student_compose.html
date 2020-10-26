@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
     student_compose.html
 
@@ -34,7 +34,7 @@
 
         <!-- Help Prompt -->
         <div class="input-group-text helpMessage" data-role=header>
-            <span>Did you know that you can click on To, Cc, Subject or Body and help will appear?</span>
+            <span>Did you know that you can click on To, Cc, Bcc, Subject or Body and help will appear?</span>
         </div>
 
 <div class="view" data-role="content">
@@ -52,6 +52,14 @@
 			<p>Is there anyone you need to copy on this email?</p>
 		</span></div></span></a>
                 <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="cc" list="emails"></a>
+            </div>
+	    <!-- Bcc header and textbox-->
+            <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Bcc<span class="helphovertext" id="popupbcc">
+			<p>Is there anyone you need to copy on this email?</p>
+			<p>The person you're sending the email to will not be able to see people you copy here.</p>
+		</span></div></span></a>
+                <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="bcc" list="emails"></a>
             </div>
             <!-- Subject header and textbox-->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
