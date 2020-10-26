@@ -85,7 +85,9 @@
         <!--Buttons-->
         <div data-role="controlgroup" data-type="horizontal">
             <!-- SAVE CHANGES BUTTON - saves the input given by admin -->
-            <a data-role="button" class="btn mybtncolor" onclick="confirmChoice(changeStudentHelpPopups,'Do you want to save your changes?')">Save Changes</a> <!-- TODO: Make function changeStudentHelpPopups -->
+            <a data-role="button" class="btn mybtncolor" onclick="confirmChoice(changeStudentHelpPopups,'Do you want to save your changes?')">Save Changes</a>
+			<!-- RESET TO DEFAULT - resets the help messages to default -->
+            <a data-role="button" class="btn mybtncolor" onclick="confirmChoice(resetStudentHelpPopups,'Do you want to reset the popup messages to default?')">Reset to Default</a>
 			<!-- BACK BUTTON - goes back to previous page -->
             <a data-role="button" class="btn mybtncolor" onclick="confirmChoice(goBack,'Go back to the previous page?')">Back</a>
             <!-- HELP BUTTON - opens help page -->
