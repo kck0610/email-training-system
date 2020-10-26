@@ -135,7 +135,7 @@ var adminReceivedEmailsArray = [];
 // Send student's written emails to student's sent items storage and admin's inbox storage 
 function sendStudent() {
     var studentEmail = {
-        to: $("#to").val(), cc: $("#cc").val(), subject: $("#sb").val(), emailtext: $("#emailtext").val()
+        to: $("#to").val(), cc: $("#cc").val(), bcc: $("#bcc").val(), subject: $("#sb").val(), emailtext: $("#emailtext").val()
         };
     var adminEmail = {
         from: "student@autismns.ca", cc: $("#cc").val(), subject: $("#sb").val(), emailtext: $("#emailtext").val(), wasSeen: false, checked: false
@@ -336,6 +336,7 @@ function viewSentItem(user) {
 			        // Display the email content in the appropriate text boxes
 			        $("#studentSentTo").val(currentEmail.to);
 			        $("#studentSentCc").val(currentEmail.cc);
+					$("#studentSentBcc").val(currentEmail.bcc);
 			        $("#studentSentSubject").val(currentEmail.subject);
 			        $("#studentSentBody").val(currentEmail.emailtext);
 			    }).fail(errorCallback);
@@ -815,16 +816,6 @@ function cBoxCheck() {
 	return true;
 }
 
-/* Keeping a list of changes made to every document:
-	Added functions below
-	Added info bar to student_settings (& put theme in control group box)
-	Created admin_settings
-	Added id's for helphovertext in student_compose
-	Added onload function displayStudentHelpPopups() to student_compose
-	
-	- Theresa
-*/
-
 /* Changes the content of the help popups on the student side, according 
    to input given on admin's Settings page.
    Theresa C */
@@ -839,16 +830,30 @@ function changeStudentHelpPopups() {
 }
 
 /* Collects help popup text from database and inserts into help popups
-   on load of the student's Compose page 
-   Theresa C */
+   on load of the student's Compose page */
 function displayStudentHelpPopups() {
 	var popupData = { key: "popupData" };
 	    $.post(SERVER_URL + '/doGet', popupData, function (data) {
-	document.getElementById("popupto").innerText = data.to;
+        document.getElementById("popupto").innerText = data.to;
         document.getElementById("popupcc").innerText = data.cc;
-	// document.getElementById("popupbcc").innerText = data.bcc; // To be added after Bcc section is implemented in student_compose
+	document.getElementById("popupbcc").innerText = data.bcc;
         document.getElementById("popupsubject").innerText = data.subject;
         document.getElementById("popupbody").innerText = data.body;
     }).fail(errorCallback);
 	
+}
+
+/* Resets the student help popups to the default messages.
+   Theresa C */
+function resetStudentHelpPopups() {
+	var popupInfo = {
+        to: "Who do you need to send an email to?\nHow many people do you need to send this email to?", 
+	cc: "Is there anyone you need to copy on this email?\nThe person you're sending the email to will be able to see people you copy here.", 
+	bcc: "Is there anyone you need to copy on this email?\nThe person you're sending the email to will not be able to see people you copy here.", 
+	subject: "What is this email about?\nWhy are you sending this email?\nRemember to keep this short and concise.", 
+	body: "How should you greet the person you are emailing?\nDo you need to ask any questions?\nDoes the person you are emailing need to know any information about you?"
+        };
+    
+	var popupData = { key: "popupData", value: popupInfo };
+	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
 }
