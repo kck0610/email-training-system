@@ -830,15 +830,28 @@ function changeStudentHelpPopups() {
 }
 
 /* Collects help popup text from database and inserts into help popups
-   on load of the student's Compose page */
+   on load of the student's Compose page, or into textboxes on admin's
+   Settings page (Note: As you can see by the if statement, I couldn't
+   get this to work exactly the same on each page. For some reason the
+   newline characters would only work using innerHTML on the Settings
+   page and innerText on the compose page)
+   Theresa C */
 function displayStudentHelpPopups() {
 	var popupData = { key: "popupData" };
 	    $.post(SERVER_URL + '/doGet', popupData, function (data) {
-        document.getElementById("popupto").innerText = data.to;
-        document.getElementById("popupcc").innerText = data.cc;
-	document.getElementById("popupbcc").innerText = data.bcc;
-        document.getElementById("popupsubject").innerText = data.subject;
-        document.getElementById("popupbody").innerText = data.body;
+			if(separateFileName(window.location.href) == "student_compose.html") {
+				document.getElementById("toPopup").innerText = data.to;
+				document.getElementById("ccPopup").innerText = data.cc;
+				document.getElementById("bccPopup").innerText = data.bcc;
+				document.getElementById("subjectPopup").innerText = data.subject;
+				document.getElementById("bodyPopup").innerText = data.body;
+			} else {
+				document.getElementById("toPopup").innerHTML = data.to;
+				document.getElementById("ccPopup").innerHTML = data.cc;
+				document.getElementById("bccPopup").innerHTML = data.bcc;
+				document.getElementById("subjectPopup").innerHTML = data.subject;
+				document.getElementById("bodyPopup").innerHTML = data.body;
+			}
     }).fail(errorCallback);
 	
 }
@@ -856,4 +869,5 @@ function resetStudentHelpPopups() {
     
 	var popupData = { key: "popupData", value: popupInfo };
 	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
+	window.location.reload(true);
 }
