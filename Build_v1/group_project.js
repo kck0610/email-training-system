@@ -601,6 +601,7 @@ function deleteAdminSentEmail(i) {
 /*
    This is the base method for implementation of the other methods below.
    It takes an anchor tag argument in this case, but it could potentially take any element tag
+   JamesH
  */
 function composeConfirmBack(aTagElement) {
 
@@ -639,6 +640,7 @@ function composeConfirmBack(aTagElement) {
 }
 
 // Help Windows - opens small help windows on-click for Composing, View Inbox Item, View Sent Item
+//JamesH
 function openHelpWindow(element) {
     var spanVal = element.innerHTML;
     // converts spanVal to string and lowercase, so formatting does not affect the comparison
@@ -666,6 +668,7 @@ function openHelpWindow(element) {
 }
 
 // Empty help button function - currently opens alert window with no info
+//JamesH? Cant remember if i did this or not.
 function helpButton() {
     // Gets the file name at end of URL
     var currentPage = separateFileName(window.location.href);
@@ -694,6 +697,7 @@ function helpButton() {
 /*
    This method takes input in the form of a html file name
    Once matched, it then sends the corresponding email
+   JamesH
 */
 function fileNameSend(htmlName) { //NOTE: Since this method uses the "this" keyword, it needs the corresponding methods to be in same file
 	switch(htmlName) {
@@ -711,7 +715,7 @@ function fileNameSend(htmlName) { //NOTE: Since this method uses the "this" keyw
 /*
    This method takes an ID tag name input and checks
    if it's null. If it's not null, then return it's length.
-   Otherwise, it returns true that the id name is null.
+   Otherwise, it returns true that the id name is null. JamesH
 */
 function checkNullLength(idName) {
 	
@@ -723,7 +727,7 @@ function checkNullLength(idName) {
 }
 
 /*
-   This takes an URL as input. Uses a REGEX to find the end of the url.(file Name)
+   This takes an URL as input. Uses a REGEX to find the end of the url.(file Name) JamesH
    Then returns that file name.
 */
 function separateFileName(url) {
@@ -740,7 +744,7 @@ function separateFileName(url) {
    confirmChoice(Function name only, Confirm message text)
 */
 
-//The message is hard coded to save complexity when used starting on line 204, then the other associated methods
+//The message is hard coded to save complexity when used starting on line 204, then the other associated methods JamesH
 function deleteConfirm(func, count) {
 	if(confirm("Are you sure you want to delete this?")) { // When confirm is true then implement the given function
 		func(count);
@@ -748,7 +752,7 @@ function deleteConfirm(func, count) {
 		return false;
 	}
 }
-// Only for function with no parameters
+// Only for function with no parameters JamesH
 function confirmChoice(func, msg) {
 	if(confirm(msg)) {
 		func();
@@ -813,4 +817,60 @@ function cBoxCheck() {
 	}
 
 	return true;
+}
+/*
+ * Searches the database for the input value in the search field
+ * 
+ * James H
+ * 
+ * TODO connect the searchField variable to the text input into the search bar
+ */
+function searchRequest(searchField) {
+
+
+	var currentPageName = separateFileName(window.location.href);
+	var data;
+	var searchResult;
+
+	switch (currentPageName) {
+		case "student_inbox.html":
+			data = { key: "studentInboxEmails" };
+
+			$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+				searchResult = searchRet;
+			}
+			).fail(errorCallback);
+
+			break;
+
+		case "student_sent.html":
+			data = { key: "studentSentEmails" };
+
+			$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+				searchResult = searchRet;
+			}
+			).fail(errorCallback);
+
+			break;
+
+		case "admin_inbox.html":
+			data = { key: "adminInboxEmails" };
+
+			$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+				searchResult = searchRet;
+			}
+			).fail(errorCallback);
+
+			break;
+
+		case "admin_sent.html":
+			data = { key: "adminSentEmails" };
+
+			$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+				searchResult = searchRet;
+			}
+			).fail(errorCallback);
+
+			break;
+    }
 }
