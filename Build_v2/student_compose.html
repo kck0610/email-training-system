@@ -34,13 +34,13 @@
 
         <!-- Help Prompt -->
         <div class="input-group-text helpMessage" data-role=header>
-            <span>Did you know that you can click on To, Cc, Bcc, Subject or Body and help will appear?</span>
+            <span>Did you know that you can hover over To, Cc, Bcc, Subject or Body and help will appear?</span>
         </div>
 
 <div class="view" data-role="content">
             <!-- To header and textbox-->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">To<span class="helphovertext" id="popupto">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">To<span class="helphovertext" id="toPopup">
 			<p>Who do you need to send an email to?</p>
 			<p>How may people do you need to send this email to?</p>
 		</span></div></span></a>
@@ -48,14 +48,15 @@
             </div>
             <!-- Cc header and textbox-->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Cc<span class="helphovertext" id="popupcc">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Cc<span class="helphovertext" id="ccPopup">
 			<p>Is there anyone you need to copy on this email?</p>
+			<p>The person you're sending the email to will be able to see people you copy here.</p>
 		</span></div></span></a>
                 <a data-role="button" class="btn composeField" onclick=" "><input data-role="button" class="form-control" type="text" id="cc" list="emails"></a>
             </div>
 	    <!-- Bcc header and textbox-->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Bcc<span class="helphovertext" id="popupbcc">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Bcc<span class="helphovertext" id="bccPopup">
 			<p>Is there anyone you need to copy on this email?</p>
 			<p>The person you're sending the email to will not be able to see people you copy here.</p>
 		</span></div></span></a>
@@ -63,7 +64,7 @@
             </div>
             <!-- Subject header and textbox-->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Subject<span class="helphovertext" id="popupsubject">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Subject<span class="helphovertext" id="subjectPopup">
 			<p>What is this email about?</p>
 			<p>Why are you sending this email?</p>
 			<p>Remember to keep this short and concise</p>
@@ -72,7 +73,7 @@
             </div>
             <!-- Textbox for email body -->
             <div class="input-group-text" data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Body<span class="helphovertext" id="popupbody">
+                <a data-role="button" class="btn composePoint composeHeader"><span onclick="openHelpWindow(this)"><div class="helphover">Body<span class="helphovertext" id="bodyPopup">
 			<p>How should you greet the person you are emailing?</p>
 			<p>Do you need to ask any questions?</p>
 			<p>Does the person you are emailing need to know any information about you?</p>		
