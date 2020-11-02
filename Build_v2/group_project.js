@@ -295,26 +295,26 @@ function displayStudentSentEmails() {
 
 // Display the admin's emails in their sent items using database call
 function displayAdminSentEmails() {
-    var data = { key: "adminSentEmails"};
-    console.log("adminSentEmails: " + data.key);
-    // Get email array from database and display emails
-    $.post(SERVER_URL + '/doGet', data, function (dataArr) {
-        for (var i = 0; i < dataArr.length; i++) {
-            // Get email in position i
-            var currentEmail = dataArr[i];
+		var data = { key: "adminSentEmails"};
+		console.log("adminSentEmails: " + data.key);
+		// Get email array from database and display emails
+		$.post(SERVER_URL + '/doGet', data, function (dataArr) {
+			for (var i = 0; i < dataArr.length; i++) {
+				// Get email in position i
+				var currentEmail = dataArr[i];
 
-            // Create string with html tags surrounding the to and subject fields
-            var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-                "onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-                + currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-                "onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-                + currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
-                "onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
+				// Create string with html tags surrounding the to and subject fields
+				var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+					"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+					+ currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+					"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+					+ currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
+					"onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
 
-            // Prepend into html
-            $(".adminSentEmails").prepend(appendText);
-        }
-    }).fail(errorCallback);
+				// Prepend into html
+				$(".adminSentEmails").prepend(appendText);
+			}
+		}).fail(errorCallback);
 }
 
 // Displays the selected sent email
@@ -856,4 +856,82 @@ function resetStudentHelpPopups() {
     
 	var popupData = { key: "popupData", value: popupInfo };
 	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
+}
+
+
+/*
+ * Searches the database for the input value in the search field
+ * 
+ * James H
+ * 
+ * SPower -- Created Temporary Search Bar that on click calls searchRequest()
+ * search bar _only_ exists in adminSent -- id searchItem takes search word
+ * See in code for admin sent below for code steps 
+ */
+function searchRequest() {
+	var currentPageName = separateFileName(window.location.href);
+	var searchResult;
+	var data;
+
+		switch (currentPageName) {
+			case "student_inbox.html":
+				data = { key: "studentInboxEmails" };
+
+				$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+					searchResult = searchRet;
+				}
+				).fail(errorCallback);
+
+				break;
+
+			case "student_sent.html":
+				data = { key: "studentSentEmails" };
+
+				$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
+					searchResult = searchRet;
+				}
+				).fail(errorCallback);
+
+				break;
+
+			case "admin_inbox.html":
+				data = { key: "adminInboxEmails" };
+
+				$.post(SERVER_URL + '/doFind', searchItem, function (searchRet) {
+					searchResult = searchRet;
+				}
+				).fail(errorCallback);
+
+				break;
+
+			case "admin_sent.html":
+				// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
+				data = { key: "adminSentEmails", searchItem: document.getElementById("searchItem").value };
+				// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 
+				// if you want to check it out
+				$.post(SERVER_URL + '/doFind', data, function (dataArr) {
+					// loops through results
+					if(dataArr.length != 0) {
+					// if there are results (dataArr length != 0) then empty out the current contents of .adminSentEmails
+					$(".adminSentEmails").empty();
+						for (var i = 0; i < dataArr.length; i++)
+						{
+							// Get email in position i
+							var currentEmail = dataArr[i];
+
+							// Create string with html tags surrounding the to and subject fields
+							var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+								"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+								+ currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+								"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+								+ currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
+								"onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
+				
+							// Prepend into html
+							$(".adminSentEmails").prepend(appendText);
+						}
+					}
+				}).fail(errorCallback);
+				break;
+    }
 }

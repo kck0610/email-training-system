@@ -29,9 +29,10 @@
     <script src="./scripts/jquery-3.4.1.min.js"></script>
 
     <!-- Main Body -->
-    <div data-role="page">
-        <div class="input-group-text title" data-role=header>
-            INBOX
+    <div class="input-group-text title searchbar" data-role=header>
+            <a data-role="button">INBOX</a>
+            <a data-role="button"><div class="search-container"><input type="text" id = "searchItem" placeholder="Search.."><!-- SEARCH BAR CODE -- SP -->
+            <button type="submit" onclick="searchRequest()">Submit</button></div></a> <!-- SEARCH BAR BUTTON -- SP -->
         </div>
         <!-- Inbox Headers -->
         <div class="view" data-role="content">
