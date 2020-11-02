@@ -748,6 +748,7 @@ function deleteConfirm(func, count) {
 		return false;
 	}
 }
+
 // Only for function with no parameters
 function confirmChoice(func, msg) {
 	if(confirm(msg)) {

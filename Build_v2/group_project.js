@@ -869,5 +869,6 @@ function resetStudentHelpPopups() {
     
 	var popupData = { key: "popupData", value: popupInfo };
 	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
+
 	window.location.reload(true);
 }
