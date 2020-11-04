@@ -197,30 +197,34 @@ function displayStudentInboxEmails() {
             // Get email in position i
             var currentEmail = dataArr[i];
 
-            // Create string with html tags surrounding the to and subject fields
+			// Create string with html tags surrounding the to and subject fields
+			// String edited to reflect new CSS stylings - BW
             if (currentEmail.wasSeen == 'false') {
                 console.log("new email");
-                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'><span class='unread'>"
-                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'><span class='unread'>"
-                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
-					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" + 
-					(currentEmail.checked == "true" ? " checked >" : ">")
-					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-					+ i + ")'><span>X</span></a>";
+                var appendText = "<div class = 'email-container unread'><div class='email email-list unread'><a class='from' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
+                    + currentEmail.from + "</a><a class='subject' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
+					+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
+					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
+					(currentEmail.checked == "true" ? " checked >" : ">") +
+					"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
+					"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+					+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
             }
             else {
                 console.log("viewed email");
-                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'><span>"
-                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'><span>"
-                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
-					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" + 
-					(currentEmail.checked == "true" ? " checked >" : ">")
-					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-					+ i + ")'><span>X</span></a>";
+                var appendText = "<div class = 'email-container'><div class='email email-list read'><a class='from' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
+                    + currentEmail.from + "</a><a class='subject' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
+					+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
+					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
+					(currentEmail.checked == "true" ? " checked >" : ">") +
+					"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
+					"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+					+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
+
             }
             // Prepend into html
             $(".studentInboxEmails").prepend(appendText);
@@ -239,10 +243,11 @@ function displayAdminInboxEmails() {
            
             var currentEmail = dataArr[i];
 	    
-            // Create string with html tags surrounding the to and subject fields
+			// Create string with html tags surrounding the to and subject fields
+			//Modified to fit new stylings by BW
             if (currentEmail.wasSeen == 'false') {
                 console.log("new email");
-                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+                var appendText = "<div class='email'><a data-role='button' class='btn mybtnpoint' " +
                     "onclick = 'adminLinkToViewInbox(" + i + ")'><span class='unread'>"
                     + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
                     "onclick = 'adminLinkToViewInbox(" + i + ")'><span class='unread'>"
@@ -254,11 +259,11 @@ function displayAdminInboxEmails() {
 
             } else {
                 console.log("viewed email");
-                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'adminLinkToViewInbox(" + i + ")'><span>"
-                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-                    "onclick = 'adminLinkToViewInbox(" + i + ")'><span>"
-                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
+                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint from' " +
+                    "onclick = 'adminLinkToViewInbox(" + i + ")'>"
+                    + currentEmail.from + "</a><a data-role='button' class='btn mybtnpoint subject' " +
+                    "onclick = 'adminLinkToViewInbox(" + i + ")'>"
+                    + currentEmail.subject + "</a></div><input type='checkbox' id='checkbox" 
 					+ i + "a' onchange='checkboxSaveFtn(" + i + ", \"a\")'" + 
 					(currentEmail.checked == "true" ? " checked >" : ">")
 					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteAdminInboxEmail," 
@@ -830,28 +835,15 @@ function changeStudentHelpPopups() {
 }
 
 /* Collects help popup text from database and inserts into help popups
-   on load of the student's Compose page, or into textboxes on admin's
-   Settings page (Note: As you can see by the if statement, I couldn't
-   get this to work exactly the same on each page. For some reason the
-   newline characters would only work using innerHTML on the Settings
-   page and innerText on the compose page)
-   Theresa C */
+   on load of the student's Compose page */
 function displayStudentHelpPopups() {
 	var popupData = { key: "popupData" };
 	    $.post(SERVER_URL + '/doGet', popupData, function (data) {
-			if(separateFileName(window.location.href) == "student_compose.html") {
-				document.getElementById("toPopup").innerText = data.to;
-				document.getElementById("ccPopup").innerText = data.cc;
-				document.getElementById("bccPopup").innerText = data.bcc;
-				document.getElementById("subjectPopup").innerText = data.subject;
-				document.getElementById("bodyPopup").innerText = data.body;
-			} else {
-				document.getElementById("toPopup").innerHTML = data.to;
-				document.getElementById("ccPopup").innerHTML = data.cc;
-				document.getElementById("bccPopup").innerHTML = data.bcc;
-				document.getElementById("subjectPopup").innerHTML = data.subject;
-				document.getElementById("bodyPopup").innerHTML = data.body;
-			}
+        document.getElementById("popupto").innerText = data.to;
+        document.getElementById("popupcc").innerText = data.cc;
+	document.getElementById("popupbcc").innerText = data.bcc;
+        document.getElementById("popupsubject").innerText = data.subject;
+        document.getElementById("popupbody").innerText = data.body;
     }).fail(errorCallback);
 	
 }
@@ -920,6 +912,7 @@ function searchRequest() {
 				break;
 
 			case "admin_sent.html":
+
 				// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
 				data = { key: "adminSentEmails", searchItem: document.getElementById("searchItem").value };
 				// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 

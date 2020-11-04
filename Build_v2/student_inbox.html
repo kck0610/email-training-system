@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <!--
-    student_inbox.html
+    student_inbox.html -> student_inbox_outlook.html 
 
     Group Project Part 3
     Mobile Applications CSCI2356
@@ -9,58 +9,102 @@
     Shannon Power A00271744
 -->
 
+
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title>Your Email System</title>
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="group_project.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="group_project.css">  comment this out for now -->
+    <link rel="stylesheet" href="css/inbox.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <!-- Start of Body - On load display emails -->
+
 <body onload="displayStudentInboxEmails()">
 
     <!--Call for javascript file -->
     <script src="group_project.js"></script>
+
     <!-- CALL FOR JQUERY -->
-    <script src="./scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/9095557959.js" crossorigin="anonymous"></script>
 
     <!-- Main Body -->
-    <div class="input-group-text title searchbar" data-role=header>
-            <a data-role="button">INBOX</a>
-            <a data-role="button"><div class="search-container"><input type="text" id = "searchItem" placeholder="Search.."><!-- SEARCH BAR CODE -- SP -->
-            <button type="submit" onclick="searchRequest()">Submit</button></div></a> <!-- SEARCH BAR BUTTON -- SP -->
+    <div data-role="page">
+        <div class="input-group-text title" data-role=header>INBOX</div>
+
+        <div class="input-group-text helpMessage" data-role=header>
+            <span>This is where all your emails will be stored and where you can go to compose a new e-mail or write a draft.</span>
         </div>
-        <!-- Inbox Headers -->
+
+
+        <!-- Hannah -->
         <div class="view" data-role="content">
-            <div data-role="controlgroup" data-type="horizontal">
-                <a data-role="button" class="btn inboxHeader"><span class="inboxHeader">FROM</span></a>
-                <a data-role="button" class="btn inboxHeader"><span class="inboxHeader">SUBJECT</span></a>
+            <div class="inbox-container">
+            <!-- Compose button and dropdown menu -->
+                
+                <div class="menu-container">
+                    <div class="search-container">
+                        <a data-role="search" onclick=" ">
+                            <input class="form-control search-field" type="search" results="0" id="search" list="emails" placeholder="Search inbox...">
+                        </a>
+                        <a href="#" class="search-button">
+                            <i class="fas fa-search fa-lg"></i>
+                        </a>
+                    </div>
+                    <a data-role="button" class="btn menu-button button-style" onclick="helpButton()">Help</a>
+                    <a data-role="button" class="btn menu-button button-style" onclick="settingsButton()">Settings</a>
+                    <a data-role="button" class="btn menu-button button-style" onclick="stLinkToCompose()">Compose</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Other Folders</button>
+                        <div class="dropdown-content">
+                            <a href="#">Sent Items</a>
+                            <a href="#">Drafts</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Some hard coded junk to give an idea of what the email previews would look like-->
+                
+
+                <div class="email-preview-container studentInboxEmails"> 
+                    <!-- This is the styling for the e-mail that is replicated in the javscript file when displaying - BW
+                    <div class = "email-container">
+                        <div class="email-list">
+                            <a data-role="controlgroup" class="from" onclick=" ">Chrystal@autismns.ca</a>
+                            <a data-role="controlgroup" class="subject" onclick=" ">Hi, how are you doing?</a>
+                        </div>
+                        <div class = "star">
+                            <input type="checkbox" class="star-with-label" id="checkbox">
+                            <label class="star-label" for="checkbox"><i class="fas fa-star"></i></label>
+                        </div>
+                        <div class ="delete">
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                    </div>
+                    -->
+                </div>
             </div>
-            <br>
-            <!-- Inbox Emails - admin emails will load in html based on adminInboxEmails -->
-            <div data-role="controlgroup" data-type="horizontal" class="studentInboxEmails">
-            </div>
-            <br>
+
+
         </div>
 
-        <!-- Body footer -->
-        <div class="input-group-text" data-role=footer>
-        </div>
-
-        <!-- Buttons -->
-        <div data-role="controlgroup" data-type="horizontal">
-            <!-- SENT ITEMS BUTTON -->
-            <a data-role="button" class="btn mybtncolor" onclick="stLinkToSentItems()">Sent Items</a>
-            <!-- COMPOSE BUTTON -->
-            <a data-role="button" class="btn mybtncolor" onclick="stLinkToCompose()">Compose</a>
-            <!-- HELP BUTTON - opens help page -->
-            <a data-role="button" class="btn mybtncolor" onclick="helpButton()">Help</a>
-        </div>
+        <!-- Was going to have this for the search bar but not sure if it should be there yet-->
+        <!-- The datalist containing the emails that the student can select in the To & Cc dropdown menus-->
+        <datalist id="emails">
+            <option value="Terence Goldsmith (Terence.Goldsmith@smu.ca)">
+            <option value="Terry (Terry@humanisticsystems.ca)">
+            <option value="Charli (Charli@autismns.ca)">
+            <option value="Chrystal (Chrystal@autismns.ca)">
+        </datalist>
     </div>
 
 </body>
+
 </html>

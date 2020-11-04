@@ -1,0 +1,405 @@
+/*
+    inbox.css
+
+    Theresa Clarke A00429814 
+    James Heading A00438459
+    Shannon Power A00271744
+
+    CSS for student_inbox_outlook.html
+
+*/
+
+/*Icons made by Good Ware from www.flaticon.com*/
+
+/* Button Styling */
+
+/* Ben */
+* {
+    font-family: Calibri;
+    font-size: 18px; 
+
+}
+
+/*edited for inbox page */
+.search-field::placeholder, ::placeholder{
+    color: #0f4d7f; /*before: #D5D5D5 */
+
+
+}
+
+body {
+    margin: 0px;
+}
+
+
+.view {
+    display: flex;
+}
+
+.settings-title {
+    line-height: 40px;
+}
+
+.menu-button{
+    width: 100%;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+.button-style {
+    background-color: white;
+    border-radius: 0px;
+    border-right: 1px solid #edebe8;
+    color: #495057;
+    transition: all 0.5s;
+}
+
+.button-style:hover {
+    background-color: #e4f1fd;
+    border-color: #106ebe;
+
+}
+
+/*Hannah*/
+.inbox-container{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+
+}
+
+/*Hannah*/
+.body-container-inbox {
+    display: flex;
+    flex-direction: row;
+    /*width: 40%;*/
+    align-items: flex-start;
+    margin: 0px;
+}
+
+/*Hannah*/
+.menu-container {
+    flex-direction: column;
+    width: 300px;
+    border-right: 2px #edebe8;
+}
+
+
+
+/* Hannah; when email list displayed make "from" bold */
+.from {
+    font-size: 16px;
+    font-weight: bold;
+    color: #495057;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+/*Hannah*/
+.subject {
+    font-size: 16px;
+    color: #605E5C;
+    padding-left: 50px;
+    /*border-bottom: 1px solid #edebe8;*/
+}
+
+/*Hannah */
+.inbox-head {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 50px;
+    line-height: 42px;
+    width: 100%;
+
+    border-bottom: 1px solid #ced4da;
+}
+
+/*Hannah*/
+.inbox-head:hover {
+    cursor: default;
+}
+
+
+
+/*Hannah*/
+.header-field-inbox{
+    width: 99.5%;
+    height: 35px;
+    background-color: #bdd7f2;
+    border: 5px;
+    border-radius: 4px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 18px;
+}
+
+.input-group-text{
+    background-color: #FAFAFA;
+    border-radius: 0;
+    border: 0px;
+    width: 100%
+}
+
+.mybtnpoint {
+    width: 45%;
+    text-align: left;
+    /*background-color: #f8f9fa; May need to add back in when hover changes*/
+}
+
+.composePoint {
+    width: 600px;
+    text-align: left;
+}
+
+/* Ben */
+.title {
+    background-color: #106ebe;
+    /* BW */
+    color: white;
+    font-size: 20px;
+    cursor: default;
+    height: 40px; /* maybe change this on all pages to make it a little bit bigger? - han */
+}
+
+/* Hannah */ 
+.title input[type=text] {
+    width: 67%;
+    height: 25px;
+    background-color: #bdd7f2;
+    border: 5px;
+    border-radius: 2px;
+    /*float: right;*/
+    margin-top: 6px;
+    margin-left: 153px;
+}
+
+/* General Styling */
+textarea {
+    width: 100%;
+}
+
+.composeField {
+    width: 80%;
+    text-align: left;
+}
+
+body {
+    width: 1000px;
+    max-width:100%;
+    background-color: #f8f9fa;
+}
+
+
+
+/* Ben's new code */
+
+/* Style The Dropdown Button */
+.dropbtn {
+width: 250px;
+background-color: #106ebe;
+color: white;
+padding: 14px;
+font-size: 20px;
+border: 0px solid #106ebe;
+cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    width: 250px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #e6e6e6;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+transition: all 0.5s;
+color: #2d95ed;
+background-color: white;
+border: 1px solid #106ebe;
+}
+
+
+/* Styling for help message block */
+.helpMessage {
+    background-color: #f7f3cb;
+}
+
+
+.search-container{
+    display:flex;
+}
+
+.search-field{
+    border-radius: 0px;
+    border-color:  #106ebe;
+    border-width: 2px;
+    /* border-width: 0px 0px 2px 0px;*/
+    background-color: #e4f1fd;
+    transition: background-color 0.5s;
+    
+}
+
+.search-field:hover, .search-button:hover {
+    background-color: white;
+    border-color: #106ebe;
+
+}
+
+.search-button{
+    font-size: 16px;
+    height:42.5px;
+    width: 50px;
+    color:  #106ebe;
+    text-align: center;
+    background-color: #e4f1fd;
+    border-color:  #106ebe;
+    padding-top: 10px;
+    border-style: solid;
+    border-width: 2px 2px 2px 0px;
+}
+
+.email-container{
+    color: gray;
+    transition: background-color 0.5s;
+    display: flex;
+}
+
+.email-container:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+.delete, .star{
+    background-color: transparent;
+    transition: 0.5s;
+    width: 90px;
+    text-align: center;
+
+    padding-top: 25px;
+}
+
+.delete{
+    border-right: 1px solid #edebe8;
+    border-bottom: 1px solid #edebe8;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+/* star is actually a checkbox as far as the html is concerned */
+.star {
+    color: gray;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #edebe8;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+
+
+.delete:hover, .star:hover{
+    color:  #106ebe;
+    text-align: center;
+    background-color: #e4f1fd;
+    border-color:  #106ebe;
+    border-style: solid;
+    border-width: 1px;    
+
+}
+
+.star-with-label:checked + .star-label{
+   color: rgba(249,209,31,0.87);
+}
+
+/* hides the actual checkbox part of star chackbox */
+input[type="checkbox"]{
+    display:none;
+
+}
+
+/* Hannah */
+.email-preview-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    align-content: stretch;
+    width: 100%;
+}
+
+
+.email-container.unread{
+    background-color:#e4f1fd;
+
+}
+
+.email-container.unread:hover{
+    background-color:white;
+
+}
+
+/*Hannah */
+.email-list.unread {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    color:  #106ebe;
+    height: 100%;
+    border-left: 3px solid #106ebe;
+    width: 100%;
+    border-bottom: 1px solid #edebe8;
+    padding-bottom: 10px;
+    transition: all 0.5s;
+}
+
+.email-list.read {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    height: 100%;
+    border-left: 3px solid #edebe8;
+    width: 100%;
+    border-bottom: 1px solid #edebe8;
+    padding-bottom: 10px;
+    transition: all 0.5s;
+}
+
+
+/*Hannah
+.email-list:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+*/
