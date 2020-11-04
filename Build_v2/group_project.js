@@ -300,7 +300,6 @@ function displayStudentSentEmails() {
 
 // Display the admin's emails in their sent items using database call
 function displayAdminSentEmails() {
-	if(document.getElementById("searchItem").value === "") {
 		var data = { key: "adminSentEmails"};
 		console.log("adminSentEmails: " + data.key);
 		// Get email array from database and display emails
@@ -321,7 +320,6 @@ function displayAdminSentEmails() {
 				$(".adminSentEmails").prepend(appendText);
 			}
 		}).fail(errorCallback);
-	}
 }
 
 // Displays the selected sent email
@@ -863,6 +861,8 @@ function resetStudentHelpPopups() {
     
 	var popupData = { key: "popupData", value: popupInfo };
 	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
+
+	window.location.reload(true);
 }
 
 
@@ -871,7 +871,9 @@ function resetStudentHelpPopups() {
  * 
  * James H
  * 
- * TODO connect the searchItem variable to the text input into the search bar
+ * SPower -- Created Temporary Search Bar that on click calls searchRequest()
+ * search bar _only_ exists in adminSent -- id searchItem takes search word
+ * See in code for admin sent below for code steps 
  */
 function searchRequest() {
 	var currentPageName = separateFileName(window.location.href);
@@ -910,10 +912,15 @@ function searchRequest() {
 				break;
 
 			case "admin_sent.html":
-				data = { key: "adminSentEmails", searchItem: document.getElementById("searchItem").value };
 
+				// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
+				data = { key: "adminSentEmails", searchItem: document.getElementById("searchItem").value };
+				// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 
+				// if you want to check it out
 				$.post(SERVER_URL + '/doFind', data, function (dataArr) {
+					// loops through results
 					if(dataArr.length != 0) {
+					// if there are results (dataArr length != 0) then empty out the current contents of .adminSentEmails
 					$(".adminSentEmails").empty();
 						for (var i = 0; i < dataArr.length; i++)
 						{

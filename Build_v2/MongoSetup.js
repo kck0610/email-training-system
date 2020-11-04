@@ -1,12 +1,16 @@
 // MongoSetup.js
 
-// Group Project Part 3 
-// Mobile Applications CSCI2356
+// SOFTWARE ENGINEERING - FALL 2020
+
 // Theresa Clarke A00429814
 // James Heading A00438459
+// Keenan King A00401667
 // Shannon Power A00271744
+// Hannah Serroul A00408086
+// Ben Wright A00374119
 
-// Set up for MongoDB GroupProject3
+
+// Set up for MongoDB Software Engineering Group 3
 
 // ** functions to save and retrieve data to/from the database are defined outside the scope of establishing the connection to the database
 
@@ -73,11 +77,12 @@ server.post('/doSetProperty', setItemProperty);
 server.post('/doGet', getCollectionItem);
 server.post('/doSetArray', setArrayCollectionItem);
 server.post('/doDeleteArrayItem', deleteArrayCollectionItem);
+server.post('/doFind', findArrayCollectionItem);
 
 // Create a connection to your mongoDB database
 mongodb.connect(credentialsString, getDBReference);
 
-// Create a new collection item in db
+// Create a new collection item in db -- S Power
 function setCollectionItem(req, res) {
     var setData = {};
     setData[req.body.key] = req.body.value;
@@ -99,7 +104,7 @@ function setCollectionItem(req, res) {
 }
 
 // allows user to change a single piece of data in an array item in the collection
-// useful for unread/read emails and the urgent chekboxes
+// useful for unread/read emails and the urgent chekboxes -- S Power
 function setItemProperty(req, res) {
     var setData = { $set: {} };
     setData.$set[String(req.body.property)] = req.body.value;
@@ -115,7 +120,7 @@ function setItemProperty(req, res) {
     });
 }
 
-// Checks if array collection item already exists and either pushes or adds collection item
+// Checks if array collection item already exists and either pushes or adds collection item -- S Power
 function setArrayCollectionItem(req, res) {
     var setData = {};
     setData[req.body.key] = req.body.value;
@@ -151,7 +156,7 @@ function setArrayCollectionItem(req, res) {
     });
 }
 
-// returns collection item to client upon request
+// returns collection item to client upon request -- S Power
 function getCollectionItem(req, res) {
     //
     var collectionKey = req.body.key;
@@ -195,7 +200,7 @@ function getCollectionItem(req, res) {
     }
 }
 
-// deletes array item from collection on request and updates collection
+// deletes array item from collection on request and updates collection -- S Power 
 function deleteArrayCollectionItem(req, res) {
     var collectionKey = req.body.key;
     var index = req.body.index;
@@ -224,12 +229,55 @@ function deleteArrayCollectionItem(req, res) {
                        }
                    });
             }
-            // no item exists in db collection so no deletion can occur
+            // no item exists in db collection so no deletion can occur 
             else {
                 console.log("tried to delete record but collection is empty");
             }
         }
     });
+}
+
+// Works with searchbar and checkEmailMatch to find searchItem and return applicable emails arrays -- S Power
+function findArrayCollectionItem(req, res) {
+        var collectionKey = req.body.key;
+        var searchItem = req.body.searchItem;
+        console.log("findArrayCollectionItem key: " + collectionKey + " find searchItem: " + searchItem);
+        globalDB.collection('emailData').findOne({}, findCallback);
+    
+        // The callback function that is executed when server.post completes its tasks.
+        function findCallback(err, foundRecord) {
+            // if error is  returned or there is no record create a new record and insert our key
+            if (err != null || foundRecord == null) {
+
+                console.log("findArrayCOllectionItem -- Failed to find collection");
+            }
+            // if record exists but the key is not found in record (does not yet exist)
+            else {
+                if (foundRecord[collectionKey] == null) {
+                        //TO DO: Should we return an empty list
+                        console.log("findArrayCollectionItem -- Collection empty");
+                }
+                // record exists and key is found, return success
+                else {
+                    //return res.status(200).send(foundRecord[collectionKey]); // callback function
+                    //var foundEntry = foundRecord[collectionKey].filter(email => { return checkEmailMatch(email, searchItem); });
+                    //console.log(foundEntry);
+                    return res.status(200).send(foundRecord[collectionKey].filter(email => { return checkEmailMatch(email, searchItem); }));
+                }
+            }
+        }
+}
+// searches each email in a collection for matching keyword (searchItem) returns results to findArrayCollectionItem -- S Power
+function checkEmailMatch(email, searchItem)
+{
+    var lowerCaseSearchItem = searchItem.toLowerCase();
+    return email.to.toLowerCase().includes(lowerCaseSearchItem) 
+        || email.cc.toLowerCase().includes(lowerCaseSearchItem)
+        || email.subject.toLowerCase().includes(lowerCaseSearchItem)
+        || email.emailtext.toLowerCase().includes(lowerCaseSearchItem)
+
+        || (email.from != undefined && email.from.toLowerCase().includes(lowerCaseSearchItem))
+        || (email.from != undefined && email.from.toLowerCase().includes(lowerCaseSearchItem));
 }
 
 // Creating the global varaible 
@@ -253,12 +301,6 @@ function getDBReference(err, ref) {
 
         if (DROP_DB_WHEN_START) {
             globalDB.collection('emailData').drop(function (dropError, dropSuccess) {
-                //var initialData = {};
-                //initialData.studentInboxEmails = [];
-                //initialData.studentSentEmails = [];
-                //initialData.adminInboxEmails = [];
-                //initialData.adminSentEmails = [];
-                //initialData.lastPage = "";
                 server.listen(port, function () {
                     console.log('Listening on port ' + port);
                 });
