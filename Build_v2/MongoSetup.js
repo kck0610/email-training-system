@@ -270,14 +270,15 @@ function findArrayCollectionItem(req, res) {
 // searches each email in a collection for matching keyword (searchItem) returns results to findArrayCollectionItem -- S Power
 function checkEmailMatch(email, searchItem)
 {
+    console.log("checking for word: ", searchItem.toLowerCase());
     var lowerCaseSearchItem = searchItem.toLowerCase();
-    return email.to.toLowerCase().includes(lowerCaseSearchItem) 
-        || email.cc.toLowerCase().includes(lowerCaseSearchItem)
+    return email.cc.toLowerCase().includes(lowerCaseSearchItem)
         || email.subject.toLowerCase().includes(lowerCaseSearchItem)
         || email.emailtext.toLowerCase().includes(lowerCaseSearchItem)
 
+        || (email.to != undefined && email.to.toLowerCase().includes(lowerCaseSearchItem))
         || (email.from != undefined && email.from.toLowerCase().includes(lowerCaseSearchItem))
-        || (email.from != undefined && email.from.toLowerCase().includes(lowerCaseSearchItem));
+        || (email.bcc != undefined && email.bcc.toLowerCase().includes(lowerCaseSearchItem));
 }
 
 // Creating the global varaible 

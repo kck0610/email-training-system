@@ -867,14 +867,10 @@ function resetStudentHelpPopups() {
 
 
 /*
- * Searches the database for the input value in the search field
- * 
- * James H
- * 
- * SPower -- Created Temporary Search Bar that on click calls searchRequest()
- * search bar _only_ exists in adminSent -- id searchItem takes search word
- * See in code for admin sent below for code steps 
+ * Search bar -- SPower 
+ * Searches the database for the input value in the search field 
  */
+
 function searchRequest() {
 	var currentPageName = separateFileName(window.location.href);
 	var searchResult;
@@ -882,34 +878,68 @@ function searchRequest() {
 
 		switch (currentPageName) {
 			case "student_inbox.html":
-				data = { key: "studentInboxEmails" };
 
-				$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
-					searchResult = searchRet;
-				}
-				).fail(errorCallback);
+					// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
+					data = { key: "studentInboxEmails", searchItem: document.getElementById("searchItem").value };
+					// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 
+					// if you want to check it out
+					$.post(SERVER_URL + '/doFind', data, function (dataArr) {
+
+						// loops through results
+						if(dataArr.length != 0) {
+						// if there are results (dataArr length != 0) then empty out the current contents of .adminSentEmails
+						$(".studentInboxEmails").empty();
+
+						for (var i = 0; i < dataArr.length; i++)
+						{
+							// Get email in position i
+							var currentEmail = dataArr[i];	
+				
+							// Create string with html tags surrounding the to and subject fields
+							// String edited to reflect new CSS stylings - BW
+							if (currentEmail.wasSeen == 'false') {
+								console.log("new email");
+								var appendText = "<div class = 'email-container unread'><div class='email email-list unread'><a class='from' " +
+									"onclick = 'stLinkToViewInbox(" + i + ")'>"
+									+ currentEmail.from + "</a><a class='subject' " +
+									"onclick = 'stLinkToViewInbox(" + i + ")'>"
+									+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
+									+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
+									(currentEmail.checked == "true" ? " checked >" : ">") +
+									"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
+									"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+									+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
+							}
+							else {
+								console.log("viewed email");
+								var appendText = "<div class = 'email-container'><div class='email email-list read'><a class='from' " +
+									"onclick = 'stLinkToViewInbox(" + i + ")'>"
+									+ currentEmail.from + "</a><a class='subject' " +
+									"onclick = 'stLinkToViewInbox(" + i + ")'>"
+									+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
+									+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
+									(currentEmail.checked == "true" ? " checked >" : ">") +
+									"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
+									"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+									+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
+							}
+						// Prepend into html
+						$(".studentInboxEmails").prepend(appendText);
+						}
+					}
+				}).fail(errorCallback);
 
 				break;
 
 			case "student_sent.html":
-				data = { key: "studentSentEmails" };
 
-				$.post(SERVER_URL + '/doSetArray', data, function (searchRet) {
-					searchResult = searchRet;
-				}
-				).fail(errorCallback);
 
-				break;
+
 
 			case "admin_inbox.html":
-				data = { key: "adminInboxEmails" };
 
-				$.post(SERVER_URL + '/doFind', searchItem, function (searchRet) {
-					searchResult = searchRet;
-				}
-				).fail(errorCallback);
 
-				break;
+
 
 			case "admin_sent.html":
 
