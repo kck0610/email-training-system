@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+    login.html
+
+    Software Engingeering CSCI 3428
+    Shannon Power A00271744
+    James Heading A00438459
+	Theresa Clarke A00429814
+	Ben Wright A00374119
+	Hannah Serroul A00408086
+	Keenan King A00401667
+
+-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Your Email System</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/group_project.css">
+    <link rel="stylesheet" href="css/inbox.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!--Call for javascript file -->
+    <script src="group_project.js"></script>
+
+    <!-- CALL FOR JQUERY -->
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/9095557959.js" crossorigin="anonymous"></script>
+
+    <!-- Main Body -->
+    <div data-role="page">
+        <div class="input-group-text title" data-role=header>LOGIN</div>
+
+        <div class="input-group-text helpMessage" data-role=header>
+            <span>Idk if we want a help message on this page but here it is anyway.</span>
+        </div>
+		
+		<div class="view" data-role="content">
+			<div class="input-group-text">Sign in</div>
+			<div data-role="controlgroup" data-type="horizontal">
+			<!-- TODO: Maybe figure out how to make the text appear as stars like when typing in a normal password? -->
+				<a data-role="button" class="btn"><input data-role="button" class="form-control" type="text" id="password"></a> 
+				<!-- So you should be able to access the text entered here using the ID password -->
+			</div
+			<div data-role="controlgroup" data-type="horizontal">
+				<a data-role="button" class="btn button-style" onclick="signIn()">Sign in</a> <!-- TODO: signIn() will need to be written -->
+			</div>
+		</div>
+
+    </div>
+
+</body>
+
+</html>
