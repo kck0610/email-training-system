@@ -43,18 +43,13 @@
             <span>Idk if we want a help message on this page but here it is anyway.</span>
         </div>
 		
-		<div class="view" data-role="content">
-			<div class="input-group-text">Sign in</div>
-			<div data-role="controlgroup" data-type="horizontal">
+		<div id="loginPage" data-role="content">
+			<p><div class="loginContent" id="loginTitle">Sign in</div>
 			<!-- TODO: Maybe figure out how to make the text appear as stars like when typing in a normal password? -->
-				<a data-role="button" class="btn"><input data-role="button" class="form-control" type="text" id="password"></a> 
+				<a data-role="button" class="btn loginContent"><input data-role="button" class="form-control" type="text" placeholder="Enter password here" id="password"></a> 
 				<!-- So you should be able to access the text entered here using the ID password -->
-			</div
-			<div data-role="controlgroup" data-type="horizontal">
-				<a data-role="button" class="btn button-style" onclick="signIn()">Sign in</a> <!-- TODO: signIn() will need to be written -->
-			</div>
+				<a data-role="button" class="btn button-style loginContent" onclick="signIn()">Sign in</a> <!-- TODO: signIn() will need to be written -->
 		</div>
-
     </div>
 
 </body>
