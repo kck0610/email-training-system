@@ -356,3 +356,26 @@ border-color: #006cbf transparent transparent transparent; /*outlook blue*/
 	background: rgba(150,150,150, 0.4);
 	display: none;
 }
+
+/* Styling for login page components - TC */
+
+.loginContent {
+    margin-left: 20px;
+    margin-right: auto;
+	margin-top: 30px;
+	white-space: pre;
+	text-align: center;
+}
+
+#loginPage {
+	border: 2px solid gray;
+	margin-left: 300px;
+	margin-right: 300px;
+	margin-top: 50px;
+	height: 200px;
+	align-content: center;
+}
+
+#loginTitle {
+	font-size: 25px;
+}
