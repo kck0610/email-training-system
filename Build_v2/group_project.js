@@ -64,7 +64,7 @@ function adminLinkToViewInbox(i) {
 //Student Links
 function stLinkToCompose() {
     savePage(separateFileName(window.location.href)); // save previous page
-    window.location.href = "student_compose.html";
+    window.location.href = "student-compose.html"; // Was: student_compose.html
 }
 
 function stLinkToSentItems() {
@@ -197,34 +197,30 @@ function displayStudentInboxEmails() {
             // Get email in position i
             var currentEmail = dataArr[i];
 
-			// Create string with html tags surrounding the to and subject fields
-			// String edited to reflect new CSS stylings - BW
+            // Create string with html tags surrounding the to and subject fields
             if (currentEmail.wasSeen == 'false') {
                 console.log("new email");
-                var appendText = "<div class = 'email-container unread'><div class='email email-list unread'><a class='from' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
-                    + currentEmail.from + "</a><a class='subject' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
-					+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
-					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
-					(currentEmail.checked == "true" ? " checked >" : ">") +
-					"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
-					"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-					+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
+                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'><span class='unread'>"
+                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'><span class='unread'>"
+                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
+					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" + 
+					(currentEmail.checked == "true" ? " checked >" : ">")
+					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+					+ i + ")'><span>X</span></a>";
             }
             else {
                 console.log("viewed email");
-                var appendText = "<div class = 'email-container'><div class='email email-list read'><a class='from' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
-                    + currentEmail.from + "</a><a class='subject' " +
-                    "onclick = 'stLinkToViewInbox(" + i + ")'>"
-					+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
-					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
-					(currentEmail.checked == "true" ? " checked >" : ">") +
-					"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
-					"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-					+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
-
+                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'><span>"
+                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'stLinkToViewInbox(" + i + ")'><span>"
+                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
+					+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" + 
+					(currentEmail.checked == "true" ? " checked >" : ">")
+					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
+					+ i + ")'><span>X</span></a>";
             }
             // Prepend into html
             $(".studentInboxEmails").prepend(appendText);
@@ -243,11 +239,10 @@ function displayAdminInboxEmails() {
            
             var currentEmail = dataArr[i];
 	    
-			// Create string with html tags surrounding the to and subject fields
-			//Modified to fit new stylings by BW
+            // Create string with html tags surrounding the to and subject fields
             if (currentEmail.wasSeen == 'false') {
                 console.log("new email");
-                var appendText = "<div class='email'><a data-role='button' class='btn mybtnpoint' " +
+                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
                     "onclick = 'adminLinkToViewInbox(" + i + ")'><span class='unread'>"
                     + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
                     "onclick = 'adminLinkToViewInbox(" + i + ")'><span class='unread'>"
@@ -259,11 +254,11 @@ function displayAdminInboxEmails() {
 
             } else {
                 console.log("viewed email");
-                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint from' " +
-                    "onclick = 'adminLinkToViewInbox(" + i + ")'>"
-                    + currentEmail.from + "</a><a data-role='button' class='btn mybtnpoint subject' " +
-                    "onclick = 'adminLinkToViewInbox(" + i + ")'>"
-                    + currentEmail.subject + "</a></div><input type='checkbox' id='checkbox" 
+                var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'adminLinkToViewInbox(" + i + ")'><span>"
+                    + currentEmail.from + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+                    "onclick = 'adminLinkToViewInbox(" + i + ")'><span>"
+                    + currentEmail.subject + "</span></a></span><input type='checkbox' id='checkbox" 
 					+ i + "a' onchange='checkboxSaveFtn(" + i + ", \"a\")'" + 
 					(currentEmail.checked == "true" ? " checked >" : ">")
 					+ "<a data-role='button' class='xbtn' onclick = 'deleteConfirm(deleteAdminInboxEmail," 
@@ -300,26 +295,26 @@ function displayStudentSentEmails() {
 
 // Display the admin's emails in their sent items using database call
 function displayAdminSentEmails() {
-		var data = { key: "adminSentEmails"};
-		console.log("adminSentEmails: " + data.key);
-		// Get email array from database and display emails
-		$.post(SERVER_URL + '/doGet', data, function (dataArr) {
-			for (var i = 0; i < dataArr.length; i++) {
-				// Get email in position i
-				var currentEmail = dataArr[i];
+    var data = { key: "adminSentEmails"};
+    console.log("adminSentEmails: " + data.key);
+    // Get email array from database and display emails
+    $.post(SERVER_URL + '/doGet', data, function (dataArr) {
+        for (var i = 0; i < dataArr.length; i++) {
+            // Get email in position i
+            var currentEmail = dataArr[i];
 
-				// Create string with html tags surrounding the to and subject fields
-				var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-					"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-					+ currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-					"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-					+ currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
-					"onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
+            // Create string with html tags surrounding the to and subject fields
+            var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
+                "onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+                + currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
+                "onclick = 'adminLinkToViewSent(" + i + ")'><span>"
+                + currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
+                "onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
 
-				// Prepend into html
-				$(".adminSentEmails").prepend(appendText);
-			}
-		}).fail(errorCallback);
+            // Prepend into html
+            $(".adminSentEmails").prepend(appendText);
+        }
+    }).fail(errorCallback);
 }
 
 // Displays the selected sent email
@@ -677,10 +672,10 @@ function helpButton() {
     var currentPage = separateFileName(window.location.href);
 
     // These statements check which page the user is on, then gives the associated alert message.alert-dark
-    if (currentPage == "student_compose.html" || currentPage == "admin_compose.html") {
+    if (currentPage == "student-compose.html" || currentPage == "admin_compose.html") { //was: student_compose.html
         alert("The purpose of the page is creating emails that you want to send to someone.");
     }
-    else if (currentPage == "student_inbox.html" || currentPage == "admin_inbox.html") {
+    else if (currentPage == "student_inbox_outlook.html" || currentPage == "admin_inbox.html") { //was: student_inbox.html
         alert("The purpose of the page is to list emails people have sent you.");
     }
     else if (currentPage == "student_sent.html" || currentPage == "admin_sent.html") {
@@ -861,115 +856,84 @@ function resetStudentHelpPopups() {
     
 	var popupData = { key: "popupData", value: popupInfo };
 	$.post(SERVER_URL + '/doSet', popupData, insertCallback).fail(errorCallback);
-
-	window.location.reload(true);
 }
 
+/* For expanding and collapsing the Menu 
+ * An issue I'm having is that the menu needs to be clicked twice before displaying the contents
+ * (gotta resolve that)
+ *  Hannah
+*/
+function collapseContentStuInbox() {
+	var c = document.getElementsByClassName("collapse-btn");
+	var i;
 
-/*
- * Search bar -- SPower 
- * Searches the database for the input value in the search field 
- */
+	for(i=0; i<c.length; i++) {
+		c[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if(content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+		});
+	}
+}
+// This is the global variable for the function below
+//Keenan King
+let psword = "Hello123"
 
-function searchRequest() {
-	var currentPageName = separateFileName(window.location.href);
-	var searchResult;
-	var data;
+function passwordCheck(){
+	var text = document.getElementById("password");
+	if(text.value == psword){
+		//Will have to change the url of the inbox page to the one that's on the server.
+	location.replace("");
+	} else{
+		// This alerts the user that they have entered the worng password.
+		alert("Please enter the correct password");
+	}
+}
 
-		switch (currentPageName) {
-			case "student_inbox.html":
-
-					// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
-					data = { key: "studentInboxEmails", searchItem: document.getElementById("searchItem").value };
-					// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 
-					// if you want to check it out
-					$.post(SERVER_URL + '/doFind', data, function (dataArr) {
-
-						// loops through results
-						if(dataArr.length != 0) {
-						// if there are results (dataArr length != 0) then empty out the current contents of .adminSentEmails
-						$(".studentInboxEmails").empty();
-
-						for (var i = 0; i < dataArr.length; i++)
-						{
-							// Get email in position i
-							var currentEmail = dataArr[i];	
-				
-							// Create string with html tags surrounding the to and subject fields
-							// String edited to reflect new CSS stylings - BW
-							if (currentEmail.wasSeen == 'false') {
-								console.log("new email");
-								var appendText = "<div class = 'email-container unread'><div class='email email-list unread'><a class='from' " +
-									"onclick = 'stLinkToViewInbox(" + i + ")'>"
-									+ currentEmail.from + "</a><a class='subject' " +
-									"onclick = 'stLinkToViewInbox(" + i + ")'>"
-									+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
-									+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
-									(currentEmail.checked == "true" ? " checked >" : ">") +
-									"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
-									"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-									+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
-							}
-							else {
-								console.log("viewed email");
-								var appendText = "<div class = 'email-container'><div class='email email-list read'><a class='from' " +
-									"onclick = 'stLinkToViewInbox(" + i + ")'>"
-									+ currentEmail.from + "</a><a class='subject' " +
-									"onclick = 'stLinkToViewInbox(" + i + ")'>"
-									+ currentEmail.subject + "</a></div><div class = 'star'><input type='checkbox' class='star-with-label' id='checkbox"
-									+ i + "s' onchange='checkboxSaveFtn(" + i + ", \"s\")'" +
-									(currentEmail.checked == "true" ? " checked >" : ">") +
-									"<label class='star-label' for='checkbox" + i + "s'><i class='fas fa-star'></i></label></div>" +
-									"<a class='delete' onclick = 'deleteConfirm(deleteStudentInboxEmail," 
-									+ i + ")'><i class='far fa-trash-alt'></i></a></div>";
-							}
-						// Prepend into html
-						$(".studentInboxEmails").prepend(appendText);
-						}
-					}
-				}).fail(errorCallback);
-
-				break;
-
-			case "student_sent.html":
+//This is for the dark theme and potientially the rest of the themes
+//Keenan King 
 
 
 
+// These are the global variables 
+var darkGroup = document.getElementById("group");
+var darkSlider = document.getElementById("slide");
 
-			case "admin_inbox.html":
+var whiteGroup = document.getElementById("group");
+var whiteSlider = document.getElementById("slide");
 
+//Function changes to Dark Theme.
+function dark(value, value2){
+	//darkGroup changes the group_project.css to any other css file 
+	darkGroup.setAttribute("href", value);
+	localStorage.setItem("CSS1", value);     //This Local storage saves the value of the href attribute 
+	
+	//darkSlider changes the slider_project.css to any other css file
+	darkSlider.setAttribute("href", value2);
+	localStorage.setItem("CSS2", value2)
+}
+//This function changes the theme back to the original by clicking the white .
 
+function whiteTheme(value, value2) {
+	//whiteGroup changes the group_project.css to any other css file
+	whiteGroup.setAttribute("href", value);
+	localStorage.setItem("CSS1", value);    //This local storage saves the value of the href attribute 
+	
+	//whiteSlider changes the slider_project.css to any other css file
+	whiteSlider.setAttribute("href", value2);
+	localStorage.setItem("CSS2", value2)
+}
 
+//This checks if a theme whether it be from the darkTheme and or the whiteTheme is storage in the local storage
+if(localStorage.getItem("CSS1")) {
+	darkGroup.setAttribute("href",localStorage.getItem("CSS1") );
+}
 
-			case "admin_sent.html":
-
-				// creats var data with key of which email array we're checking and searchItem that pulls id: searchItem from html
-				data = { key: "adminSentEmails", searchItem: document.getElementById("searchItem").value };
-				// posts to /doFind which takes the array and the word and searches using functions findArrayCollectionItem and checkEmailMatch 
-				// if you want to check it out
-				$.post(SERVER_URL + '/doFind', data, function (dataArr) {
-					// loops through results
-					if(dataArr.length != 0) {
-					// if there are results (dataArr length != 0) then empty out the current contents of .adminSentEmails
-					$(".adminSentEmails").empty();
-						for (var i = 0; i < dataArr.length; i++)
-						{
-							// Get email in position i
-							var currentEmail = dataArr[i];
-
-							// Create string with html tags surrounding the to and subject fields
-							var appendText = "<span class='email'><a data-role='button' class='btn mybtnpoint' " +
-								"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-								+ currentEmail.to + "</span></a><a data-role='button' class='btn mybtnpoint' " +
-								"onclick = 'adminLinkToViewSent(" + i + ")'><span>"
-								+ currentEmail.subject + "</span></a></span><a data-role='button' class='xbtn' " +
-								"onclick = 'deleteConfirm(deleteAdminSentEmail," + i + ")'><span>X</span></a>";
-				
-							// Prepend into html
-							$(".adminSentEmails").prepend(appendText);
-						}
-					}
-				}).fail(errorCallback);
-				break;
-    }
+//This only checks if the theme in settings was storage in the local storage.
+if(localStorage.getItem("CSS2")) {
+	darkSlider.setAttribute("href",localStorage.getItem("CSS2") );
 }
