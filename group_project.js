@@ -908,23 +908,32 @@ var whiteSlider = document.getElementById("slide");
 
 //Function changes to Dark Theme.
 function dark(value, value2){
+	//darkGroup changes the group_project.css to any other css file 
 	darkGroup.setAttribute("href", value);
-	localStorage.setItem("CSS1", value);
+	localStorage.setItem("CSS1", value);     //This Local storage saves the value of the href attribute 
+	
+	//darkSlider changes the slider_project.css to any other css file
 	darkSlider.setAttribute("href", value2);
 	localStorage.setItem("CSS2", value2)
 }
-//This function changes the theme back to the original.
+//This function changes the theme back to the original by clicking the white .
+
 function whiteTheme(value, value2) {
+	//whiteGroup changes the group_project.css to any other css file
 	whiteGroup.setAttribute("href", value);
-	localStorage.setItem("CSS1", value);
+	localStorage.setItem("CSS1", value);    //This local storage saves the value of the href attribute 
+	
+	//whiteSlider changes the slider_project.css to any other css file
 	whiteSlider.setAttribute("href", value2);
 	localStorage.setItem("CSS2", value2)
 }
 
+//This checks if a theme whether it be from the darkTheme and or the whiteTheme is storage in the local storage
 if(localStorage.getItem("CSS1")) {
 	darkGroup.setAttribute("href",localStorage.getItem("CSS1") );
 }
 
+//This only checks if the theme in settings was storage in the local storage.
 if(localStorage.getItem("CSS2")) {
 	darkSlider.setAttribute("href",localStorage.getItem("CSS2") );
 }
