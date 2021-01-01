@@ -1,0 +1,72 @@
+/*
+    dark_login.css
+
+	Software Engingeering - Fall 2020
+	
+	Dark Mode Changes By:
+        Keenan King
+    
+    Other Contributors:
+		Theresa Clarke 
+    	James Heading 
+   		Shannon Power 
+		Hannah Serroul 
+		Ben Wright 
+
+    CSS for: 
+            login.html
+*/
+
+.body {
+	background-color: #636363; /* dark mode */
+}
+
+.loginContent {
+    margin-left: 40px;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	white-space: pre;
+	
+}
+
+#loginPage {
+	color: white; /* dark mode */
+	justify-content: center;
+	flex-direction: column;
+	border: 5px;
+	margin-top: 80px;
+	height: 400px;
+	width: 400px;
+	margin-left: 475px;
+	background: #106ebe; /* dark mode */
+	border: 2px solid #08365e; /* dark mode */
+	box-shadow: 8px 8px 10px #1f1f1f; /* dark mode */
+}
+
+#loginTitle {
+	color: white; /* grey mode */
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.button-style{
+	border-width: 1px;
+	border-color: #edebe8; /* grey mode */
+	border-radius: 3px;
+	margin-left: 20px;
+}
+
+.welcome { 
+	margin-left: 40px;
+	margin-top: 30px;
+	font-size: 23px;
+}
+
+.form-control {
+	margin-left: 25px;
+	border-radius: 0px;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-color: #106ebe;
+}

@@ -1,0 +1,149 @@
+/*
+    grey_view_item.css
+
+    Software Engingeering - Fall 2020
+
+    HTML Rebuild Completed By: 
+        Hannah Serroul 
+
+    Grey Mode Changes By:
+        Keenan King
+
+    Other Contributors:
+        Theresa Clarke 
+        James Heading 
+   	    Shannon Power 
+        Ben Wright 
+
+    CSS for student_view_sent.html
+            admin_view_sent.html
+            student_view_inbox.html
+            admin_view_inbox.html
+
+*/
+
+/* Keenan - grey mode */
+.view {
+    background-color: #666666;
+    height: 800px;
+}
+
+.inbox-container {
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+}
+
+.menu-container {
+    color: #edebe8; /* grey mode */
+    flex-direction: column;
+    width: 300px;
+    border-right: 2px #edebe8;
+}
+
+.sb-container {
+    display: flex;
+    flex-direction: row;
+    background: #494949; /* grey mode */
+    color: #edebe8; /* grey mode */
+    width: 100%;
+    border-bottom: 1px solid #6e6e6e; /* grey mode */
+    border-left: 2px solid #6e6e6e; /* grey mode */
+    border-right: 2px solid #6e6e6e; /* grey mode */
+    height: 50px;
+} 
+
+.indent {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.indent-head {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: -10px;
+    font-weight: bold;
+}
+
+.indent:hover {
+    cursor: default;
+}
+
+.indent-head:hover {
+    cursor: default;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    background: #636363; /* grey mode */
+    color: #edebe8; /* grey mode */
+    width: 100%;
+    height: 350px;
+    border-bottom: 2px solid #6e6e6e; /* grey mode */
+    border-right: 2px solid #6e6e6e; /* grey mode */
+    border-left: 2px solid #6e6e6e; /* grey mode */
+}
+
+.main-email {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.labels-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 45px;
+}
+
+.labels {
+    margin-bottom: -2px;
+    margin-top: 2px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.labels:hover {
+    cursor: default;
+}
+
+.main-body {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 18px;
+    overflow: auto;
+}
+
+hr {
+    border-bottom: 1px solid #c0bfbd; /* grey mode */
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-style: inset;
+    border-width: 100%;
+}
+
+/* Specific button stylings for the view pages - Edited by Ben*/
+.button-style {
+    background-color: #494949; /* grey mode */
+    border:1px solid #6e6e6e; /* grey mode */
+    border-radius: 0px;
+    border-bottom: 1px solid #6e6e6e; /* grey mode */
+    color: #edebe8; /* grey mode */
+    transition: all 0.5s;
+}
+
+.button-style:hover {
+    background-color: #c0bfbd; /* grey mode */
+    border-color: #edebe8; /* grey mode */
+}

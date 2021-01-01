@@ -1,0 +1,87 @@
+/*
+    colourful_login.css
+
+	Software Engingeering - Fall 2020
+	
+	Colourful Mode Changes By:
+        Shannon Power
+
+    Other Contributors:
+        Keenan King
+        James Heading 
+        Theresa Clarke 
+        Ben Wright 
+        Hannah Serroul 
+
+    CSS for: 
+            login.html
+*/
+
+.body {
+	background-color: #E6E7EF; /* dark mode */
+}
+
+.loginContent {
+    margin-left: 40px;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	white-space: pre;
+	
+}
+
+#loginPage {
+	justify-content: center;
+	flex-direction: column;
+	border: 5px;
+	margin-top: 80px;
+	height: 400px;
+	width: 400px;
+	margin-left: 475px;
+	background: #F6FDD8; /* colourful mode */
+	border: 2px solid #defa63; /* colourful mode */
+	box-shadow: 8px 8px 10px #aaaaaa; /* colourful mode */
+}
+
+#loginTitle {
+	color: #2b2d42;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.button-style {
+	border-width: 1px;
+	border-color: #edebe8;
+	border-radius: 3px;
+	margin-left: 20px;
+}
+
+.button-style:hover {
+	border-color: #ff66d8;
+	background: #facbee;
+	box-shadow: 0 0 0 .2rem rgba(205, 245, 60, 0.504);
+}
+
+
+.welcome { 
+	color: #2b2d42;
+	margin-left: 40px;
+	margin-top: 30px;
+	font-size: 23px;
+}
+
+.form-control {
+	margin-left: 25px;
+	border-radius: 0px;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-color: #E5F98B; /* colourful mode */
+}
+
+/* colourful mode */
+.form-control:focus {
+    border-color: #d7fc35; /* colourful mode */
+    border-width: 1px;
+    box-shadow: none;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(205, 245, 60, 0.504);
+} 

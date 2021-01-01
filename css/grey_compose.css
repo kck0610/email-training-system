@@ -1,0 +1,288 @@
+﻿/*
+    grey_compose.css
+
+    Software Engingeering CSCI 3428
+
+    Grey Mode Changes By:
+        Keenan King
+    
+    Other Contributors:
+        Shannon Power
+        James Heading
+        Theresa Clarke
+        Ben Wright 
+        Hannah Serroul 
+
+    CSS for: 
+            student_compose.html
+            admin_compose.html
+
+/*
+    Starts with "button" styling - which includes the formatting for the email address/subject
+    Then we have cursor styling (including hover)
+    Header styling
+    Other styling for the body
+*/
+
+
+.email-head-container{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.header-field::placeholder, ::placeholder{
+    color: #928b8b; /* dark mode */
+}
+
+.helpMessage {
+    background-color: #4b4949;
+}
+
+/* Header Styling */
+.composeHeader {
+    width: 70px;
+    text-align: right;
+    cursor: help;
+}
+
+.sub-head-container {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    background-color: #636363; /* grey mode */
+
+}
+
+.send-button {
+    flex: 5%;
+    padding: 40px 15px;
+}
+
+/* Button styling specific to compose */
+.button-style {
+    background-color: #4b4949; /* grey mode */
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+
+}
+
+.button-style:hover {
+    background-color: #024d86;
+    border-color: rgb(0,0,0);
+}
+
+
+.header-button-container {
+    flex: 5%;
+    text-align: right;
+  
+}
+
+.header-button {
+    height: 58px;
+    padding: 12px 5px 5px 5px;
+
+}
+
+.header-field-container {
+    flex: 85%;
+    align-content:stretch;
+
+}
+
+.header-field {
+    width: 700px;
+}
+
+.help-cancel {
+    display: flex;
+    flex-direction: column;
+    flex: 5%;
+}
+
+.main-button {
+    width: 85px;
+    height: 47px;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 85px;
+
+}
+
+.body-button {
+    flex: 5%;
+    text-align: right;
+}
+
+.email-body {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex: 95%;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background: #e7e7e6;
+    /* margin: 10px 160px 30px 12px;*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.emailtext {
+    resize: none;
+    border: 0px;
+    width: 800px;
+}
+
+/* Keenan - dark mode */
+.input-group-text {
+    color: white; /* dark mode */
+    background-color:#636363; /* dark mode */
+    border-radius: 0;
+    border: 0px;
+    width: 100%
+}
+
+/* textfields color */
+.form-control {
+    background-color: #e7e7e6; /* grey mode */
+}
+
+/* body text area color */
+textarea {
+    background-color: #e7e7e6; /* grey mode */
+}
+
+.composePoint {
+    width: 600px;
+    text-align: left;
+}
+
+/* Header Styling */
+.composeHeader {
+    width: 70px;
+    text-align: right;
+    cursor: help;
+}
+
+/* General Styling */
+textarea {
+    width: 100%;
+}
+
+.composeField {
+    width: 80%;
+    text-align: left;
+}
+
+body {
+    width: 1000px;
+    max-width:100%;
+    background-color: #636363; /* dark mode */
+}
+
+
+/* help hover window - SP */
+.helphover {
+    color: white;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #c0c2c0; 
+}
+
+/* hoverhelp window text -SP */
+.helphover .helphovertext {
+  visibility: hidden;
+  font-size: .8em;
+  width: max-content;
+  background-color: #006cbf; /*outlook blue*/
+  color: #fff;
+  text-align: left;
+  padding: 0px 5px 0px 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  border-radius: 6px;
+  /* popup positioning */
+  bottom: 100%;
+  left: 50%;
+  margin-left: -20px;  
+  /* end of popup positioning */
+  opacity: 0;
+  transition: .3s;
+  position: absolute; /*text position*/
+  z-index: 1; /*text position*/
+}
+
+/* show help window on hover - SP */
+.helphover:hover .helphovertext {
+  visibility: visible;
+  opacity: .8;
+}
+
+/* arrow for help popup - SP */
+.helphover .helphovertext::after {
+content: " ";
+position:absolute;
+top: 100%;
+left: 10%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #006cbf transparent transparent transparent; /*outlook blue*/
+}
+
+
+/* Styling for the compose screen overlay prompt - TC*/
+#overlay {
+	position: fixed;
+	height: 100%; 
+	width: 100%;
+	top: 0;
+	right: 0;  
+	bottom: 0;
+	left: 0;
+	background: rgba(150,150,150, 0.4);
+	display: none;
+}
+
+#popup {
+	max-width: 500px;
+	width: 50%;
+	max-height: 280px;
+	height: 50%; 
+	padding: 20px;
+    position: relative;
+    color: white; /* dark mode */
+	background: #4b4949; /* dark mode */
+	margin: 20px auto;
+	border-color: rgb(32, 31, 31);
+}
+
+.main-button.continue {
+    width: 100px;
+}
+
+/* Optional styling for seperating if the body is separated into multiple files
+
+.body-section{
+    background-color: white;
+}
+
+.intro {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.body {
+    border-radius: 0px;
+}
+
+.sign-off {
+    border-radius: 0px 0px 5px 5px;  
+}
+
+*/

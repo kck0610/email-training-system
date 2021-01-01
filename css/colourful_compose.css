@@ -1,0 +1,290 @@
+﻿/*
+    colourful_compose.css
+
+    Software Engingeering CSCI 3428
+
+    Colourful Mode Changes By:
+        Shannon Power
+    
+    Other Contributors:
+        Keenan King
+        James Heading
+        Theresa Clarke
+        Ben Wright 
+        Hannah Serroul 
+
+    CSS for: 
+            student_compose.html
+            admin_compose.html
+
+/*
+    Starts with "button" styling - which includes the formatting for the email address/subject
+    Then we have cursor styling (including hover)
+    Header styling
+    Other styling for the body
+*/
+
+
+.email-head-container{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.header-field::placeholder, ::placeholder{
+    color: #a2a0a3; /* colourful mode */
+}
+
+.helpMessage {
+    background-color: #4b4949;
+}
+
+/* Colourful mode - Shannon */
+.btn {
+    color: #2b2d42; /* colourful mode */
+}
+
+/* Header Styling */
+.composeHeader {
+    color: #2b2d42; /* colourful mode */
+    width: 70px;
+    text-align: right;
+    cursor: help;
+}
+
+.sub-head-container {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    background-color: #E6E7EF; /* colourful mode */
+
+}
+
+.send-button {
+    color: #2b2d42; /* colourful mode */
+    flex: 5%;
+    padding: 40px 15px;
+}
+
+/* Button styling specific to compose */
+.button-style {
+    background-color: #E5F98B; /* colourful mode */
+    border-radius: 5px;
+    border: #2b2d42 1px solid; /* colourful mode */
+
+}
+
+.button-style:hover {
+    background-color: #F6FDD8; /* colourful mode */
+    border-color: #2b2d42; /* colourful mode */
+}
+
+
+.header-button-container {
+    flex: 5%;
+    text-align: right;
+  
+}
+
+.header-button {
+    height: 58px;
+    padding: 12px 5px 5px 5px;
+}
+
+.header-field-container {
+    flex: 85%;
+    align-content:stretch;
+
+}
+
+.header-field {
+    width: 700px;
+    background-color: #f3f1f3; /* colourful mode */
+}
+
+.help-cancel {
+    display: flex;
+    flex-direction: column;
+    flex: 5%;
+}
+
+.main-button {
+    width: 85px;
+    height: 47px;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 85px;
+
+}
+
+.body-button {
+    flex: 5%;
+    text-align: right;
+}
+
+.email-body {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex: 95%;
+    border: 1px solid #E6E7EF; /* colourful mode */
+    border-radius: 5px;
+    background: #E6E7EF; /* colourful mode */
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.emailtext {
+    resize: none;
+    border: 0px;
+    width: 800px;
+}
+
+/* Keenan - dark mode */
+.input-group-text {
+    background-color:#E6E7EF; /* colourful mode */
+    border-radius: 0;
+    border: 0px;
+    width: 100%;
+}
+
+/* Colourful mode - Shannon */
+/* textfields color */
+.form-control {
+    background-color: #F8F7F9; /* colourful mode */
+    border-color: #ff66d8 2px solid; 
+}
+
+/* Colourful mode - Shannon */
+.form-control:focus {
+    border-color: #ff66d8; 
+    border-width: 1px;
+    box-shadow: none;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(255, 102, 216,.40);
+} 
+
+/* Colourful mode - Shannon */
+/* Highlights email on hover */
+.email:hover {
+    background-color: lightgray;
+    padding: .375rem 0rem .75rem;
+    border-radius: .25em;
+}
+
+.composePoint {
+    width: 600px;
+    text-align: left;
+}
+
+/* Header Styling */
+.composeHeader {
+    width: 70px;
+    text-align: right;
+    cursor: help;
+}
+
+/* General Styling */
+textarea {
+    border: #2b2d42 1px solid;
+    background-color: #F8F7F9; /* colourful mode */
+    width: 100%;
+}
+
+.composeField {
+    width: 80%;
+    text-align: left;
+}
+
+body {
+    width: 1000px;
+    max-width:100%;
+    background-color: #E6E7EF; /* colourful mode */
+}
+
+
+/* help hover window - SP */
+.helphover {
+    color: #2b2d42; /* colourful mode */
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #C0C2C0; 
+}
+
+/* hoverhelp window text -SP */
+.helphover .helphovertext {
+  visibility: hidden;
+  font-size: .8em;
+  width: max-content;
+  background-color: #92dce5; /* colourful mode */
+  color: #fff;
+  text-align: left;
+  padding: 0px 5px 0px 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  border-radius: 6px;
+  /* popup positioning */
+  bottom: 100%;
+  left: 50%;
+  margin-left: -20px;  
+  /* end of popup positioning */
+  opacity: 0;
+  transition: .3s;
+  position: absolute; /*text position*/
+  z-index: 1; /*text position*/
+}
+
+/* show help window on hover - SP */
+.helphover:hover .helphovertext {
+  visibility: visible;
+  opacity: 100%;
+}
+
+/* arrow for help popup - SP */
+.helphover .helphovertext::after {
+content: " ";
+position:absolute;
+top: 100%;
+left: 10%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #92DCE5 transparent transparent transparent; /* colourful mode */
+}
+
+
+/* Styling for the compose screen overlay prompt - TC*/
+#overlay {
+	position: fixed;
+	height: 100%; 
+	width: 100%;
+	top: 0;
+	right: 0;  
+	bottom: 0;
+	left: 0;
+	background: rgba(150,150,150, 0.4);
+	display: none;
+}
+
+#popup {
+	max-width: 500px;
+	width: 50%;
+	max-height: 280px;
+	height: 50%; 
+	padding: 20px;
+    position: relative;
+    color: #2b2d42; /* colourful mode */
+    background: #E6E7EF; /* colourful mode */
+    border: #a2a0a3 1px solid; /* colourful mode */
+	margin: 20px auto;
+	border-color: rgb(32, 31, 31);
+}
+
+.main-button.continue {
+    width: 100px;
+}
+

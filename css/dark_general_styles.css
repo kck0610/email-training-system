@@ -1,0 +1,164 @@
+﻿/*
+    general_styles.css
+
+    Software Engingeering CSCI 3428
+    Shannon Power
+    James Heading 
+    Theresa Clarke 
+    Ben Wright 
+    Hannah Serroul 
+    Keenan King 
+
+    CSS file used for general stylings, used by all pages.
+
+    Code for dropdown menus adapted from: https://www.w3schools.com/css/css_dropdowns.asp
+*/
+
+/*
+    Starts with "button" styling - which includes the formatting for the email address/subject
+    Then we have cursor styling (including hover)
+    Header styling
+    Other styling for the body
+*/
+
+/* Button Styling */
+
+/*Bens Stuff */
+* {
+    font-family: Calibri, Helvetica;
+    font-size: 18px;
+}
+
+/*
+.view {
+    display: flex;
+}
+*/
+
+body {
+    margin: 0px;
+    background-color: #222222;
+}
+
+
+.menu-button {
+    color: #edebe8;
+    width: 100%;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+/* Specific button stylings for the inbox pages */
+.button-style {
+    background-color: #4b4949; /* dark mode */
+    border: 0px;
+    border-radius: 0px;
+    color: white;
+    transition: all 0.5s;
+}
+
+.button-style:hover {
+    background-color: #e4f1fd;
+    border-color: rgb(0,0,0);
+}
+
+.title {
+    background-color: #106ebe !important;
+    /* BW */
+    color: white;
+    font-size: 20px;
+    cursor: default;
+    height: 40px; /* maybe change this on all pages to make it a little bit bigger? - han */
+}
+
+
+/* delete */
+.title input[type=text] {
+    width: 67%;
+    height: 25px;
+    background-color: #bdd7f2;
+    border: 5px;
+    border-radius: 2px;
+    /* float: right; */
+    margin-top: 6px;
+    margin-left: 153px;
+}
+
+.input-group-text{
+    background-color: #FAFAFA;
+    border-radius: 0;
+    border: 0px;
+    width: 100%;
+}
+
+
+/* Styling for help message block */
+.helpMessage {
+    background-color: #c5ad60 !important; /* dark mode */
+    color: white; /* dark mode */
+}
+
+/* Styling for help page */
+.helpPageBackground {
+    background-color: rgb(173,216,230);
+}
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    width: 250px;
+    background-color: #106ebe;
+    color: white;
+    padding: 14px;
+    font-size: 20px;
+    border: 0px solid #106ebe;
+    cursor: pointer;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    width: 250px;
+    display: none;
+    position: absolute;
+    background-color: #d3d1cf; /* dark mode */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    color: white; /*dark mode */
+    background-color: #6e6e6e; /* dark mode */
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+transition: all 0.5s;
+color: #2d95ed;
+background-color: #d3d1cf; /* dark mode */
+border: 1px solid #106ebe;
+}
+

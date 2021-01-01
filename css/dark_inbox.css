@@ -1,0 +1,309 @@
+/*
+    dark_inbox.css
+
+    Software Engingeering CSCI 3428
+
+    Dark Mode Changes By:
+        Keenan King
+
+    Other Contributors:
+        Shannon Power 
+        James Heading 
+        Theresa Clarke 
+        Ben Wright 
+        Hannah Serroul 
+
+    CSS for: 
+            student_inbox.html
+            admin_inbox.html
+            student_sent.html
+            admin_sent.html
+
+
+*/
+
+/*Icons made by Good Ware from www.flaticon.com*/
+
+/* Button Styling */
+
+/* Ben */
+
+
+/*edited for inbox page */
+.search-field::placeholder, ::placeholder{
+    color: #0f4d7f; /*before: #D5D5D5 */
+}
+
+.menu-button{
+    width: 100%;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+/*Hannah*/
+.inbox-container{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+
+}
+
+/*Hannah*/
+.menu-container {
+    flex-direction: column;
+    width: 300px;
+    border-right: 2px red;
+}
+
+/* Specific button stylings for the inbox pages */
+.button-style {
+    background-color: #4b4949; /* dark mode */
+    border: 0px;
+    border-radius: 0px;
+    color: white;
+    transition: all 0.5s;
+}
+
+.button-style:hover {
+    background-color: #e4f1fd;
+    border-color: rgb(0,0,0);
+}
+
+/*Hannah*/
+.from {
+    font-size: 16px;
+    font-weight: bold;
+    color: #495057;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+/*Hannah*/
+.subject {
+    font-size: 16px;
+    color: #605E5C;
+    padding-left: 50px;
+    /*border-bottom: 1px solid #edebe8;*/
+}
+
+/*delete */
+.inbox-head {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 50px;
+    line-height: 42px;
+    width: 100%;
+
+    border-bottom: 1px solid #ced4da;
+}
+
+/*delete*/
+.inbox-head:hover {
+    cursor: default;
+}
+
+/*delete*/
+.header-field-inbox{
+    width: 99.5%;
+    height: 35px;
+    background-color: #bdd7f2;
+    border: 5px;
+    border-radius: 4px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 18px;
+}
+
+.mybtnpoint {
+    width: 45%;
+    text-align: left;
+}
+
+.composePoint {
+    width: 600px;
+    text-align: left;
+}
+
+/* Ben */
+
+
+/* General Styling */
+textarea {
+    width: 100%;
+}
+
+.composeField {
+    width: 80%;
+    text-align: left;
+}
+
+body {
+    width: 1000px;
+    max-width:100%;
+    background-color: #222222; /* dark mode */
+}
+
+
+/* Ben's new code */
+
+
+.search-container{
+    display:flex;
+}
+
+.search-field{
+    border-radius: 0px;
+    border-color:  #106ebe;
+    border-width: 2px;
+    /* border-width: 0px 0px 2px 0px;*/
+    background-color: #e4f1fd;
+    transition: background-color 0.5s;
+    
+}
+
+.search-field:hover, .search-button:hover {
+    background-color: white;
+    border-color: #106ebe;
+
+}
+
+.search-button{
+    font-size: 16px;
+    height:42.5px;
+    width: 50px;
+    color:  #106ebe;
+    text-align: center;
+    background-color: #e4f1fd;
+    border-color:  #106ebe;
+    padding-top: 10px;
+    border-style: solid;
+    border-width: 2px 2px 2px 0px;
+}
+/*James H: Start */
+
+/*Disables the default x button for chrome*/
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+/*New icon for the x button in the search bar*/
+.icon-chrome {
+    opacity: 0;
+    position: absolute;
+    left: 182px;
+    height: 42.5px;
+    padding-top: 13px;
+    color: black;
+    text-align: center;
+}
+/*James H: End */
+
+
+.email-container{
+    color: #dfdfdf; /* dark mode */
+    transition: background-color 0.5s;
+    display: flex;
+}
+
+.email-container:hover{
+    background-color: #636363; /* dark mode */
+    cursor: pointer;
+}
+
+
+.delete, .star{
+    background-color: transparent;
+    transition: 0.5s;
+    width: 90px;
+    text-align: center;
+
+    padding-top: 25px;
+}
+
+.delete{
+    border-right: 1px solid #6e6e6e; /* dark mode */
+    border-bottom: 1px solid #6e6e6e; /* dark mode */
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+/* star is actually a checkbox as far as the html is concerned */
+.star {
+    color: #6e6e6e; /* dark mode */
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #6e6e6e; /* dark mode */
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.delete:hover, .star:hover{
+    color:  #106ebe;
+    text-align: center;
+    background-color: #6e6e6e; /* dark mode */
+    border-color:  #edebe8; /* dark mode */
+    border-style: solid;
+    border-width: 1px;    
+
+}
+
+.star-with-label:checked + .star-label{
+   color: rgba(249,209,31,0.87);
+}
+
+/* hides the actual checkbox part of star chackbox */
+input[type="checkbox"]{
+    display:none;
+
+}
+
+/* Hannah */
+.email-preview-container {
+    display: flex;
+    flex-direction: column;
+    background: #222222; /* dark mode */
+    align-content: stretch;
+    width: 100%;
+}
+
+.email-container.unread{
+    background-color:#494949; /* dark mode */
+}
+
+.email-container.unread:hover{
+    background-color:#6e6e6e; /* dark mode */
+}
+
+/*Ben*/
+.email-list.unread {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    color:  #edebe8; /* dark mode */
+    height: 100%; 
+    border-left: 3px solid #106ebe;
+    width: 100%;
+    border-bottom: 1px solid #6e6e6e; /* dark mode */
+    padding-bottom: 10px;
+    transition: all 0.5s;
+}
+
+.email-list.read {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    color:  #d3d1cf; /* dark mode */
+    height: 100%;
+    border-left: 3px solid #6e6e6e; /* dark mode */
+    width: 100%;
+    border-bottom: 1px solid #6e6e6e; /* dark mode */
+    padding-bottom: 10px;
+    transition: all 0.5s;
+}
+
+/*Hannah
+.email-list:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+*/

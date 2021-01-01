@@ -1,0 +1,207 @@
+/*
+    grey_setting.css
+
+    Software Engineering - Fall 2020
+
+	  HTML Rebuild Completed By:
+        Ben Wright 
+
+    Grey Mode Changes By:
+        Keenan King
+
+    Other Contributors:
+        Theresa Clarke 
+        James Heading  
+   	    Shannon Power 
+        Hannah Serroul 
+    
+    CSS for admin_settings.html
+            student_settings.html
+  
+
+Code for slider adapted from: https://www.w3schools.com/howto/howto_css_switch.asp
+
+*/
+
+/* Keenan - Styling for help message block */
+.helpMessage {
+  background-color: #f7f3cb !important; 
+  color: black;
+}
+
+/* Keenan - grey mode */
+.view {
+  background-color: #636363;
+  height: 800px;
+}
+
+.button-style {
+  background-color: #106ebe;
+  color: #edebe8;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.button-style:hover {
+  color: black;
+  background-color: #e4f1fd;
+  border-color: #106ebe;
+}
+
+.settings-title{
+  line-height: 40px;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjusts the button stylings for the settings page */
+.main-button-settings {
+  width: 85px;
+  height: 47px;
+  margin: 8px;
+  text-align: center;
+  line-height: 31px;
+}
+
+/* Adjusts the button container stylings for the settigns page */
+.help-cancel-settings {
+  display: flex;
+  flex-direction: row;
+  flex: 5%;
+  margin-top: 10px;
+}
+
+.full_slider {
+  color: #edebe8; /* grey mode */
+  margin: 20px 10px;
+  width: 400px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  margin: 6px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color:#106ebe;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #106ebe;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Theme dropdown menu - Shannon*/
+label {
+  color: #edebe8;
+  padding-left: 10px;
+  padding-right: 12px;
+}
+
+select {
+  width: 20%;
+  padding-left: 10px;
+  color: black;
+}
+
+option {
+  color: black;
+}
+
+/*Styles specifically for admin settings*/
+textarea {
+  width: 500px;
+  border: #222222 1px solid;
+  background-color:  #d3d1cf; /* grey mode */
+}
+
+a.composeHeader {
+  width: 50px;
+  color: #edebe8;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-button {
+  color: #edebe8; /* grey mode */
+  width: 160px;
+}
+
+.reset-button{ 
+  width: 180px;
+}
+
+.input-group-text {
+  background-color: #636363; /* grey mode */
+  border: none;
+}
+
+/* Keenan - dark mode */
+.title {
+  background-color: #106ebe !important;
+  color: white;
+  font-size: 20px;
+  cursor: default;
+  height: 40px;
+}
